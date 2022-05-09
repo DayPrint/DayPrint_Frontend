@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
 /* ----------header----------*/
 
 #header {
@@ -20,7 +22,7 @@
 .home_btn {
     color: black;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 45px;
     font-weight: bold;
 }
 
@@ -29,7 +31,7 @@
 }
 
 /*       mainPage       */
-main .MyAccount{
+main .MyAccount {
     /* border: 1px solid red; */
     background: rgb(255, 181, 201);
     width: 100%;
@@ -38,7 +40,8 @@ main .MyAccount{
     padding: 30px 0;
     border: 5px dotted rgb(207, 57, 97);
 }
-.MyAccount .account{
+
+.MyAccount .account {
     /* border: 1px solid yellow; */
     /* height: 50px; */
     color: brown;
@@ -51,7 +54,7 @@ main .MyAccount{
 }
 
 /* ----------body(workplace)----------*/
-.MyAccount{
+.MyAccount {
     /* border: 1px solid red; */
     background: rgb(255, 181, 201);
     width: 100%;
@@ -60,7 +63,8 @@ main .MyAccount{
     padding: 30px 0;
     border: 5px dotted rgb(207, 57, 97);
 }
-.MyAccount .account{
+
+.MyAccount .account {
     /* border: 1px solid yellow; */
     /* height: 50px; */
     color: brown;
@@ -79,8 +83,8 @@ main .MyAccount{
     grid-gap: 10px;
     grid-template-columns: repeat(4, 100px);
     /*grid-template-rows: repeat(infinite, 100px);*/
-    justify-content:space-evenly;
-    align-content:center;
+    justify-content: space-evenly;
+    align-content: center;
     padding: 20px 0;
     background: #ffeead;
 }
@@ -94,7 +98,8 @@ main .MyAccount{
     border-radius: 50%;
     height: 100px;
 }
-.MyWorkplace div a{
+
+.MyWorkplace div a {
     /* background: url(../images/plus-solid.svg) no-repeat; */
     color: #ffeead;
 }
@@ -114,12 +119,13 @@ main .MyAccount{
 
 /* ----------body(instagram)----------*/
 
-div.Instagram{
+div.Instagram {
     border: 1px solid green;
     color: blue;
     height: 100px;
     padding: 30px 0;
 }
+
 /*
 슬라이드용 이미지 경로
 https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-08.jpg
@@ -129,10 +135,16 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-11.jpg
 https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
 
 */
-.controls {text-align: center;}
+.controls {
+    text-align: center;
+}
+
 /* .carousel {margin:0 auto;} */
-.carousel-item img{width:15%; }
-.indicators{
+.carousel-item img {
+    width: 15%;
+}
+
+.indicators {
     background: #333;
 }
 
@@ -185,4 +197,118 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
     padding: 10px;
     width: 60%;
     text-align: center;
+}
+
+/*       login        */
+#login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffeead;
+}
+
+#login input {
+    width: 310px;
+    height: 50px;
+    font-size: 28px;
+    outline: none;
+    border: none;
+    margin: 10px 0;
+    padding: 5px 20px;
+}
+
+#login input:focus {
+    border-bottom: 1px solid black;
+}
+
+#login input::placeholder {
+    font-family: 'Dongle', sans-serif;
+}
+
+#login .login_btn {
+    font-family: 'Dongle', sans-serif;
+    background-color: transparent;
+    border: 1px solid black;
+    font-weight: 700;
+    font-size: 30px;
+    width: 350px;
+    margin-top: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+#login .signup_btn {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+#login .signup_btn:hover {
+    text-decoration: underline 2px;
+}
+
+/*       sign up       */
+#sign_up {
+    background-color: #ffeead;
+}
+
+#sign_up .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h2 {
+    letter-spacing: 5px;
+    font-size: 52px;
+}
+
+.content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.field {
+    width: 330px;
+    padding: 5px 0 5px 20px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+.field input {
+    outline: none;
+    border: none;
+    margin: 0 0 0 10px;
+    font-size: 28px;
+    height: 40px;
+}
+
+.field input::placeholder {
+    font-family: 'Dongle', sans-serif;
+}
+
+#sign_up .signup_btn {
+    font-family: 'Dongle', sans-serif;
+    background: none;
+    border: 1px solid #000;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    width: 350px;
+    margin-top: 10px;
+}
+
+#sign_up .login_btn {
+    margin-top: 20px;
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+#sign_up .login_btn:hover {
+    text-decoration: underline 2px;
 }

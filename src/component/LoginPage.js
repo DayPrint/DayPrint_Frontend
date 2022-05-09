@@ -5,18 +5,16 @@ import Header from './Header';
 const LoginPage = () => {
 
   return (
-    <div>
+    <div id="login">
       <Header />
-      <div>
-        <label htmlFor="id">아이디 : </label>
-        <input type="text" id="id" />
-      </div>
-      <div>
-        <label htmlFor="pwd">패스워드 : </label>
-        <input type="password" id="pwd" />
-      </div>
+      <form autoComplete="off">
+        <input type="text" id="id" placeholder="아이디" />
+        <input type="password" id="pwd" placeholder="비밀번호" />
+        <button type="submit" className="login_btn">로그인</button>
+        <a href="/signup" className="signup_btn">회원가입</a>
+      </form>
     </div>
-  )
-}
+  );
+};
 
 export default LoginPage;
