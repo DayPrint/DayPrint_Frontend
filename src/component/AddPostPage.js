@@ -4,7 +4,7 @@ import '../style/addpostpage.css';
 
 const AddPostPage = () => {
 
-    const theme = ["Christmas", "New Year", "Birthday", "Graduation", "Marriage"];
+    let theme = ["Christmas", "New Year", "Birthday", "Graduation", "Marriage"];
     return (
         <div>
             <section>
