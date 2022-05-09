@@ -1,12 +1,10 @@
 import React from 'react';
 import '../style/styles.css';
-import Header from './Header';
 
 const LoginPage = () => {
 
   return (
     <div>
-      <Header />
       <div>
         <label htmlFor="id">아이디 : </label>
         <input type="text" id="id" />

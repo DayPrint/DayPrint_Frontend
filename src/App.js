@@ -1,18 +1,17 @@
 import './App.css';
-import MainPage from './component/MainPage';
-import LoginPage from './component/LoginPage';
-import PostPage from './component/PostPage';
+import { MainPage, LoginPage, PostPage, Comment, AddPostPage,Header } from './component';
 import { Route, Routes } from 'react-router-dom';
-import Comment from './component/Comment';
 
 function App() {
   return (
     <div>
+      <Header/>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/post" element={<AddPostPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/post" element={<PostPage />} />
-        <Route path="/post/comment" element={<Comment />} />
+        <Route path="/page" element={<PostPage />} />
+        <Route path="/page/comment" element={<Comment />} />
       </Routes>
     </div>
   );
