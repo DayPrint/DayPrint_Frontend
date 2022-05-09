@@ -8,10 +8,10 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/post" element={<AddPostPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/page" element={<PostPage />} />
-        <Route path="/page/comment" element={<Comment />} />
+        <Route path="/post" element={<PostPage />} />
+        <Route path="/post/comment" element={<Comment />} />
+        <Route path="/add" element={<AddPostPage />} />
       </Routes>
     </div>
   );
