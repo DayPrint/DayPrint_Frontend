@@ -1,0 +1,188 @@
+/* ----------header----------*/
+
+#header {
+    padding: 5px 0;
+    background: #ffeead;
+    display: flex;
+    justify-content: center;
+}
+
+#header ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+    width: 80%;
+    margin: 30px 0;
+}
+
+.home_btn {
+    color: black;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.icon {
+    width: 25px;
+}
+
+/*       mainPage       */
+main .MyAccount{
+    /* border: 1px solid red; */
+    background: rgb(255, 181, 201);
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 5px dotted rgb(207, 57, 97);
+}
+.MyAccount .account{
+    /* border: 1px solid yellow; */
+    /* height: 50px; */
+    color: brown;
+    vertical-align: center;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translate(0px, 50%);
+}
+
+/* ----------body(workplace)----------*/
+.MyAccount{
+    /* border: 1px solid red; */
+    background: rgb(255, 181, 201);
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 5px dotted rgb(207, 57, 97);
+}
+.MyAccount .account{
+    /* border: 1px solid yellow; */
+    /* height: 50px; */
+    color: brown;
+    vertical-align: center;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translate(0px, 50%);
+}
+
+.MyWorkplace {
+    /* border: 3px dotted gray; */
+    height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 100px);
+    /*grid-template-rows: repeat(infinite, 100px);*/
+    justify-content:space-evenly;
+    align-content:center;
+    padding: 20px 0;
+    background: #ffeead;
+}
+
+.MyWorkplace > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    color: #ffeead;
+    border-radius: 50%;
+    height: 100px;
+}
+.MyWorkplace div a{
+    /* background: url(../images/plus-solid.svg) no-repeat; */
+    color: #ffeead;
+}
+
+.MyWorkplace > div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.MyWorkplace > div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.MyWorkplace > div:nth-child(3n) {
+    background-color: #ffcc5c;
+}
+
+
+/* ----------body(instagram)----------*/
+
+div.Instagram{
+    border: 1px solid green;
+    color: blue;
+    height: 100px;
+    padding: 30px 0;
+}
+/*
+슬라이드용 이미지 경로
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-08.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-09.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-10.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-11.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
+
+*/
+.controls {text-align: center;}
+/* .carousel {margin:0 auto;} */
+.carousel-item img{width:15%; }
+.indicators{
+    background: #333;
+}
+
+/*        post         */
+.post_background {
+    background-image: url("../style/images/post_background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plus_btn {
+    width: 25px;
+}
+
+/*         comment         */
+.comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment textarea {
+    width: 60%;
+    display: block;
+    border: dashed 10px red;
+    text-align: center;
+    font-size: xx-large;
+    height: 500px;
+    border-radius: 30px;
+    resize: none;
+    outline: none;
+}
+
+.comment input {
+    margin-top: 20px;
+    width: 60%;
+    text-align: center;
+}
+
+.myButton {
+    margin-top: 20px;
+    border: 1px solid red;
+    color: red;
+    text-decoration: none;
+    padding: 10px;
+    width: 60%;
+    text-align: center;
+}
