@@ -8,7 +8,17 @@
     display: flex;
     justify-content: center;
 }
-
+#header ul li{
+    font-size: 45px;
+    border: 1px solid red;
+}
+#header ul li a{
+    text-decoration: none;
+    color: black;
+}
+#header ul li:nth-child(2)>a{
+    font-size: 60px;
+}
 #header ul {
     display: flex;
     flex-direction: row;
@@ -27,7 +37,7 @@
 }
 
 .icon {
-    width: 25px;
+    width: 30px;
 }
 
 /*       mainPage       */
@@ -102,6 +112,8 @@ main .MyAccount {
 .MyWorkplace div a {
     /* background: url(../images/plus-solid.svg) no-repeat; */
     color: #ffeead;
+    text-decoration: none;
+
 }
 
 .MyWorkplace > div:nth-child(1n) {
