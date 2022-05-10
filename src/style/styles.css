@@ -30,6 +30,79 @@
     width: 25px;
 }
 
+/* ----------footer----------*/
+#footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 29px 0;
+    border-top: 1px solid #ebebeb;
+    width: 100%;
+}
+#footer p {
+    font-size: 1em;
+    margin: 0;
+    color: #9b9b9b;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner-slider {
+    margin: 5px 0;
+    width: 95%;
+}
+
+.slider-button-prev {
+    position: absolute;
+    top: 15%;
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slider-button-prev::after {
+    font-size: 30px;
+    content: '<';
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.slider-button-next {
+    position: absolute;
+    right: -15px;
+    top: 15%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slider-button-next::after {
+    font-size: 30px;
+    display: block;
+    content: '>';
+    width: 50px;
+    height: 50px;
+}
+
+.swiper-pagination {
+    display: none;
+}
+
+.banner-slider a {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-slider a {
+    background-color: #ffeead;
+    margin: 5px;
+    border-radius: 5px;
+}
+
 /*       mainPage       */
 main .MyAccount {
     /* border: 1px solid red; */
@@ -120,7 +193,6 @@ main .MyAccount {
 /* ----------body(instagram)----------*/
 
 div.Instagram {
-    border: 1px solid green;
     color: blue;
     height: 100px;
     padding: 30px 0;
