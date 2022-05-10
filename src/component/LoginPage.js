@@ -6,15 +6,31 @@ const LoginPage = () => {
 
   return (
     <div id="login">
-      <Header />
-      <form autoComplete="off">
-        <input type="text" id="id" placeholder="아이디" />
-        <input type="password" id="pwd" placeholder="비밀번호" />
-        <button type="submit" className="login_btn">로그인</button>
-        <a href="/signup" className="signup_btn">회원가입</a>
-      </form>
+      {/* <Header /> */}
+      <div class="content">
+        <h2 class="banner-tt"><a href="/">DayPrint</a> 로그인</h2>
+        <form autoComplete="off" class="login_form">
+          <div className="field">
+            <label for="userName" class="hidden">Name</label>
+            <i className="fas fa-user" />
+            <input type="text" id="userName" name="username" placeholder="  아이디  or  이메일" />
+          </div>
+          <div className="field">
+            <label for="userPass" class="hidden">password</label>
+            <i className="fas fa-lock" />
+            <input type="password" id="userPass" name="userpw" placeholder="  비밀번호" />
+          </div>
+          <input type="submit" className="field" value="로그인" />
+        </form>
+        <div>
+          <div>
+            <a href="/signup" class="link">회원가입</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default LoginPage;
+
