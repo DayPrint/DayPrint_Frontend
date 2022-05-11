@@ -1,10 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+@import url(reset.css);
+
+/*
+font-family: 'Dongle', sans-serif;
+*/
+
+/*-----------common----------*/
+/* .hidden{
+    position: fixed;
+    left: 0;
+    top:-99999em;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+} */
+body{
+    font: 50px 'Dongle', sans-serif;
+    color: #000;
+    background: #ffeead;
+    /* width: 100%; */
+}
+/* .cf:after{
+    content:'';
+    clear:both;
+    display: block;
+} */
+.container{
+    width: 80%;
+    margin:0 auto;
+}
+.fa-solid{
+    text-indent: -9999em;
+    vertical-align: center;
+    display: inline-block;
+    width: 26px;
+    height: 30px;
+}
 
 /* ----------header----------*/
-body{
-    background: #ffeead;
-    /* font: 50px 'Dongle', sans-serif; */
-}
 
 #header {
     padding: 5px 0;
@@ -12,7 +45,19 @@ body{
     display: flex;
     justify-content: center;
 }
+#header ul li{
+    font-size: 45px;
+    /* border: 1px solid red; */
 
+}
+#header ul li a{
+    text-decoration: none;
+    color: black;
+    line-height: 60px;
+}
+#header ul li:nth-child(2)>a{
+    font-size: 60px;
+}
 #header ul {
     display: flex;
     flex-direction: row;
@@ -31,142 +76,7 @@ body{
 }
 
 .icon {
-    width: 25px;
-}
-
-/* ----------footer----------*/
-#footer {
-    display: flex;
-    justify-content: space-around;
-    padding: 29px 0;
-    border-top: 1px solid #ebebeb;
-    width: 100%;
-    background: #ffeead;
-}
-#footer p {
-    font-size: 1em;
-    margin: 0;
-    color: #9b9b9b;
-}
-.footer_banner{
-    margin-top: 15px;
-    background: #fff;
-}
-.footer_banner .banner{
-    text-align: center;
-}
-.banner {
-    position: relative;
-    background: #fff;
-    padding: 0 0 15px 0;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.banner-slider {
-    margin: 5px 0;
-    width: 95%;
-}
-
-.footer_container {
-    width: 100%;
-    font-size: 25px;
-    padding: 20px 0 0 0;
-    background: #fff;
-    letter-spacing: .5px;
-}
-
-.go_instagram{
-    margin-left: 10%;
-    text-decoration: none;
-    color: #33805c;
-}
-
-.go_instagram:hover .fa-instagram{
-    position: relative;
-    animation: bounce .8s infinite ease-in-out;
-    /* -webkit-animation: bounce 0.8s infinite ease-in-out; */
-    /* -o-animation: bounce 0.8s infinite ease-in-out; */
-}
-@keyframes bounce { 
-    0% { top: 0; } 
-    50% { top: -5px; } 
-    100% { top: 0; } 
-}
-/* @-webkit-keyframes bounce { 
-    0% { top: 0; } 
-    50% { top: -5px; } 
-    100% { top: 0; } 
-} */
-/* @-o-keyframes bounce { 
-    0% { top: 0; } 
-    50% { top: -5px; } 
-    100% { top: 0; } 
-} */
-.fa-brands{
-    text-indent: -9999em;
-    vertical-align: center;
-    display: inline-block;
-    width: 26px;
-    height: 30px;
-}
-.go_instagram .fa-instagram{
-    background: url(images/instagram-brands.svg) no-repeat;
-    vertical-align: middle;
-}
-
-.slider-button-prev {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    z-index: 1;
-    cursor: pointer;
-    height: 60px;
     width: 30px;
-    line-height: 60px;
-}
-
-.slider-button-prev::after {
-    font-size: 40px;
-    content: '<';
-    display: block;
-    text-align: center;
-}
-
-.slider-button-next {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    z-index: 1;
-    cursor: pointer;
-    height: 60px;
-    width: 30px;
-    line-height: 60px;
-}
-
-.slider-button-next::after {
-    font-size: 40px;
-    display: block;
-    content: '>';
-    text-align: center;
-}
-
-.swiper-pagination {
-    display: none;
-}
-
-.banner-slider{
-    background: #fff;
-}
-.banner-slider a {
-    color: #33805c;
-    text-decoration: none;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    background-color: #ffeead;
-    margin: 5px;
-    border-radius: 5px;
 }
 
 
@@ -236,12 +146,15 @@ main .MyAccount {
     font-size: 34px;
     color: #ffeead;
     border-radius: 50%;
-    height: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 .MyWorkplace div a {
     /* background: url(../images/plus-solid.svg) no-repeat; */
     color: #ffeead;
+    text-decoration: none;
+
 }
 
 .MyWorkplace > div:nth-child(1n) {
@@ -260,6 +173,7 @@ main .MyAccount {
 /* ----------body(instagram)----------*/
 
 div.Instagram {
+    border: 1px solid green;
     color: blue;
     height: 100px;
     padding: 30px 0;
@@ -339,14 +253,80 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
 }
 
 /*       login        */
+#login{
+    padding-top: 81px;
+}
+#login .banner-tt{
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    /* border-bottom: 1px solid black; */
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+#login .login_form{
+    padding-top: 81px;
+}
+#login .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #login form {
+    width: 350px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #ffeead;
 }
+#login .field{
+    background: #fff;
+    border-radius:3px;
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    padding: 0 20px;
+    box-sizing:border-box;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+#login .field input{
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    height: 50%;
+    padding:0;
+    padding-left: 50px;
+    box-sizing: border-box;
+    font-size: 30px;
+}
+#login .field input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#A8A8A8;
+}
+  
+#login .field input::placeholder, .field i {
+    color:#A8A8A8;;
+}
+#login .field i {
+    margin-right: 2px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    /* line-height: inherit; */
+}
+#login input[type="submit"] {
+    background:none;
+    border:1px solid #000;
+    color:#000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+}
 
-#login input {
+/* #login input {
     width: 310px;
     height: 50px;
     font-size: 28px;
@@ -384,7 +364,7 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
 
 #login .signup_btn:hover {
     text-decoration: underline 2px;
-}
+} */
 
 /*       sign up       */
 #sign_up {
@@ -428,8 +408,70 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
 .field input::placeholder {
     font-family: 'Dongle', sans-serif;
 }
-
-#sign_up .signup_btn {
+#sign_up{
+    padding: 81px 0;
+}
+#sign_up .banner-tt{
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    /* border-bottom: 1px solid black; */
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+#sign_up .sign_up_form{
+    padding-top: 81px;
+}
+#sign_up form{
+    width: 350px;
+    margin:0 auto;
+}
+#sign_up .field{
+    background: #fff;
+    border-radius:3px;
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    padding: 0 20px;
+    box-sizing:border-box;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+#sign_up .field input{
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    height: 50%;
+    padding:0;
+    padding-left: 50px;
+    box-sizing: border-box;
+    font-size: 30px;
+}
+#sign_up .field input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#A8A8A8;
+}
+  
+#sign_up .field input::placeholder, .field i {
+    color:#A8A8A8;;
+}
+#sign_up .field i {
+    margin-right: 2px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    /* line-height: inherit; */
+}
+#sign_up input[type="submit"] {
+    background:none;
+    border:1px solid #000;
+    color:#000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+}
+/* #sign_up .signup_btn {
     font-family: 'Dongle', sans-serif;
     background: none;
     border: 1px solid #000;
@@ -450,4 +492,29 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
 
 #sign_up .login_btn:hover {
     text-decoration: underline 2px;
+} */
+.dp_make_account:hover{
+    color: #fff;
+}
+.sign_up_container{
+    text-align: center;
+}
+.sign_up_link{
+    display: flex;
+    justify-content: center;
+}
+.link{
+    font-size: 30px;
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(0, 0, 0, 0);
+    margin: 0 30px;
+    transition: text-decoration-color .5s ease-out;
+}
+.link:hover{
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(0, 0, 0, 0.4);
 }
