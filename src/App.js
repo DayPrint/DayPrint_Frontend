@@ -1,7 +1,6 @@
 import './App.css';
 import { MainPage, LoginPage, PostPage, Comment, AddPostPage,Header } from './component';
 import { Route, Routes } from 'react-router-dom';
-import Comment from './component/Comment';
 import SignUp from './component/SignUp';
 
 

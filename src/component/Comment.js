@@ -1,6 +1,6 @@
 import React from 'react';
-import '../style/styles.css';
-import '../style/button.css';
+import '../style/css/comment.css';
+import '../style/css/button.css';
 
 const Comment = () => {
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../style/button.css';
-import '../style/addpostpage.css';
+import '../style/css/button.css';
+import '../style/css/addpostpage.css';
 
 const AddPostPage = () => {
     const theme=['Christmas', 'New Year', 'Birthday', 'Graduation', 'Marriage'];

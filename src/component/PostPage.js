@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/styles.css';
+import '../style/css/styles.css';
 import plus_btn from "../style/images/plus-solid.svg";
 
 const PostPage = () => {

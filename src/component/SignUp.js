@@ -1,12 +1,9 @@
 import React from 'react';
-import '../style/styles.css';
-import Header from './Header';
-
+import '../style/css/styles.css';
 const LoginPage = () => {
 
   return (
     <div id="sign_up">
-      <Header />
       <div className="content">
         <h2>무료로 계정을 만들어보세요!</h2>
         <form autoComplete="off" action="" method="POST">

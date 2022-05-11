@@ -1,11 +1,10 @@
 import React from 'react';
-import '../style/styles.css';
+import '../style/css/styles.css';
 
 const LoginPage = () => {
 
   return (
     <div id="login">
-      <Header />
       <form autoComplete="off">
         <input type="text" id="id" placeholder="아이디" />
         <input type="password" id="pwd" placeholder="비밀번호" />
