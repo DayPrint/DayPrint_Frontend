@@ -1,0 +1,10 @@
+#theme>li{
+    list-style: none;
+    display: inline;
+    border: solid 3px red;
+    margin:auto;
+    padding:20px;
+}
+#theme{
+    display: flex;
+}

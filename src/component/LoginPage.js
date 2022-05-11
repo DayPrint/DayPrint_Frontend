@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/styles.css';
-import Header from './Header';
 
 const LoginPage = () => {
 
@@ -13,6 +12,7 @@ const LoginPage = () => {
         <button type="submit" className="login_btn">로그인</button>
         <a href="/signup" className="signup_btn">회원가입</a>
       </form>
+
     </div>
   );
 };
