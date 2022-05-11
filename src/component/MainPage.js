@@ -24,7 +24,7 @@ const MainPage = () => {
         <div><a href="/post">my story</a></div>
         <div><a href="/post">my story</a></div>
       </div>
-      <div className="Instagram">instagram</div>
+      {/* <div className="Instagram">instagram</div> */}
       <Footer />
     </div>
   )
