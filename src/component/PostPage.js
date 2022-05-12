@@ -1,10 +1,12 @@
 import React from 'react';
 import '../style/css/styles.css';
 import plus_btn from "../style/images/plus-solid.svg";
+import Header from './Header.js'
 
 const PostPage = () => {
 
   return (
+    <Header/>
     <div>
       <div className="post_background">
         <h1>000님에게 10개의 메세지가 왔습니다</h1>
