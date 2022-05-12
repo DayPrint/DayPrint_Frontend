@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+/* ----------header----------*/
+
+#header {
+    padding: 5px 0;
+    background: #ffeead;
+    display: flex;
+    justify-content: center;
+}
+
+#header ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+    width: 80%;
+    margin: 30px 0;
+}
+
+.home_btn {
+    color: black;
+    text-decoration: none;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.icon {
+    width: 25px;
+}
+
+/* ----------footer----------*/
+#footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 29px 0;
+    border-top: 1px solid #ebebeb;
+    width: 100%;
+}
+#footer p {
+    font-size: 1em;
+    margin: 0;
+    color: #9b9b9b;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner-slider {
+    margin: 5px 0;
+    width: 95%;
+}
+
+.slider-button-prev {
+    position: absolute;
+    top: 15%;
+    left: 15px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slider-button-prev::after {
+    font-size: 30px;
+    content: '<';
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.slider-button-next {
+    position: absolute;
+    right: -15px;
+    top: 15%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slider-button-next::after {
+    font-size: 30px;
+    display: block;
+    content: '>';
+    width: 50px;
+    height: 50px;
+}
+
+.swiper-pagination {
+    display: none;
+}
+
+.banner-slider a {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-slider a {
+    background-color: #ffeead;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/*       mainPage       */
+main .MyAccount {
+    /* border: 1px solid red; */
+    background: rgb(255, 181, 201);
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 5px dotted rgb(207, 57, 97);
+}
+
+.MyAccount .account {
+    /* border: 1px solid yellow; */
+    /* height: 50px; */
+    color: brown;
+    vertical-align: center;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translate(0px, 50%);
+}
+
+/* ----------body(workplace)----------*/
+.MyAccount {
+    /* border: 1px solid red; */
+    background: rgb(255, 181, 201);
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 30px 0;
+    border: 5px dotted rgb(207, 57, 97);
+}
+
+.MyAccount .account {
+    /* border: 1px solid yellow; */
+    /* height: 50px; */
+    color: brown;
+    vertical-align: center;
+    font-size: 60px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translate(0px, 50%);
+}
+
+.MyWorkplace {
+    /* border: 3px dotted gray; */
+    height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 100px);
+    /*grid-template-rows: repeat(infinite, 100px);*/
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 20px 0;
+    background: #ffeead;
+}
+
+.MyWorkplace > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    color: #ffeead;
+    border-radius: 50%;
+    height: 100px;
+}
+
+.MyWorkplace div a {
+    /* background: url(../images/plus-solid.svg) no-repeat; */
+    color: #ffeead;
+}
+
+.MyWorkplace > div:nth-child(1n) {
+    background-color: #96ceb4;
+}
+
+.MyWorkplace > div:nth-child(2n) {
+    background-color: #ff6f69;
+}
+
+.MyWorkplace > div:nth-child(3n) {
+    background-color: #ffcc5c;
+}
+
+
+/* ----------body(instagram)----------*/
+
+div.Instagram {
+    color: blue;
+    height: 100px;
+    padding: 30px 0;
+}
+
+/*
+슬라이드용 이미지 경로
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-08.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-09.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-10.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-11.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
+
+*/
+.controls {
+    text-align: center;
+}
+
+/* .carousel {margin:0 auto;} */
+.carousel-item img {
+    width: 15%;
+}
+
+.indicators {
+    background: #333;
+}
+
+/*        post         */
+.post_background {
+    background-image: url("../../style/images/post_background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plus_btn {
+    width: 25px;
+}
+
+/*         comment         */
+.comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment textarea {
+    width: 60%;
+    display: block;
+    border: dashed 10px red;
+    text-align: center;
+    font-size: xx-large;
+    height: 500px;
+    border-radius: 30px;
+    resize: none;
+    outline: none;
+}
+
+.comment input {
+    margin-top: 20px;
+    width: 60%;
+    text-align: center;
+}
+
+.myButton {
+    margin-top: 20px;
+    border: 1px solid red;
+    color: red;
+    text-decoration: none;
+    padding: 10px;
+    width: 60%;
+    text-align: center;
+}
+form{
+    background-color: #ffeead;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/*       login        */
+#login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+#login input {
+    width: 310px;
+    height: 50px;
+    font-size: 28px;
+    outline: none;
+    border: none;
+    margin: 10px 0;
+    padding: 5px 20px;
+}
+
+#login input:focus {
+    border-bottom: 1px solid black;
+}
+
+#login input::placeholder {
+    font-family: 'Dongle', sans-serif;
+}
+
+#login .login_btn {
+    font-family: 'Dongle', sans-serif;
+    background-color: transparent;
+    border: 1px solid black;
+    font-weight: 700;
+    font-size: 30px;
+    width: 350px;
+    margin-top: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+#login .signup_btn {
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+#login .signup_btn:hover {
+    text-decoration: underline 2px;
+}
+
+/*       sign up       */
+#sign_up {
+    background-color: #ffeead;
+}
+
+#sign_up .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h2 {
+    letter-spacing: 5px;
+    font-size: 52px;
+}
+
+.content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.field {
+    width: 330px;
+    padding: 5px 0 5px 20px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+.field input {
+    outline: none;
+    border: none;
+    margin: 0 0 0 10px;
+    font-size: 28px;
+    height: 40px;
+}
+
+.field input::placeholder {
+    font-family: 'Dongle', sans-serif;
+}
+
+#sign_up .signup_btn {
+    font-family: 'Dongle', sans-serif;
+    background: none;
+    border: 1px solid #000;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    width: 350px;
+    margin-top: 10px;
+}
+
+#sign_up .login_btn {
+    margin-top: 20px;
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+#sign_up .login_btn:hover {
+    text-decoration: underline 2px;
+}
