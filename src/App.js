@@ -1,5 +1,5 @@
 import './App.css';
-import { MainPage, LoginPage, PostPage, Comment, AddPostPage,Header } from './component';
+import { MainPage, LoginPage, PostPage, Comment, AddPostPage } from './component';
 import { Route, Routes } from 'react-router-dom';
 import SignUp from './component/SignUp';
 import CommentStyle from './component/CommentStyle';
@@ -8,7 +8,6 @@ import CommentStyle from './component/CommentStyle';
 function App() {
   return (
     <div>
-      <Header/>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
