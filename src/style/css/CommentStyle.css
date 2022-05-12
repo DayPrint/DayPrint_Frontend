@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap);
+
+
+h1{
+    font: 50px 'Dongle', sans-serif;
+    text-align: center;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+#decor li{
+    margin:auto;
+    display:inline;
+    width:30%;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px 0px;
+}
+#decor li.checked{
+    margin: auto;
+    display: inline;
+    width: 30%;
+    border: solid 5px red;
+}
