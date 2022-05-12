@@ -3,6 +3,7 @@ import '../style/css/button.css';
 import '../style/css/addpostpage.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/css/button.css'
+import Header from './Header.js'
 
 const AddPostPage = () => {
     // const theme = ['Christmas', 'New Year', 'Birthday', 'Graduation', 'Marriage'];
@@ -21,6 +22,7 @@ const AddPostPage = () => {
     //     console.log(params);
     // }
     return (
+        <Header/>
         <div className='addpostform'>
             {/* <div>
                 <ul id="theme">
