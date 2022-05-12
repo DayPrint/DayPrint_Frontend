@@ -1,16 +1,19 @@
 import React from 'react';
-import menu_icon from "../style/images/bars-solid.svg";
-import user_icon from "../style/images/user-solid.svg";
+import '../style/header.css';
 
 const Header = () => {
   return (
-    <div id="header" className="container cf">
-      <ul>
-        <li><a href="#"><img className="icon" src={menu_icon} alt="menu"/></a></li>
-        <li><a href="/" className="home_btn">DayPrint</a></li>
-        <li><a href="/login"><img className="icon" src={user_icon} alt="user"/></a></li>
-      </ul>
-    </div>
+    <header>
+      <div className="container cf">
+        <nav>
+            <ul className="Header_bar cf">
+                <li className="Header_add"><a href="#" alt="add_story">스토리 작성하기 <i class="fa-solid fa-shoe-prints"></i></a></li>
+                <li className="Header_logo"><a href="/" alt="home">DayPrint</a></li>
+                <li className="Header_account"><a href="/login" alt="login">로그인 <i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
   )
 }
 
