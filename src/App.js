@@ -1,10 +1,9 @@
 import './App.css';
-import MainPage from './component/MainPage';
-import LoginPage from './component/LoginPage';
-import PostPage from './component/PostPage';
+import { MainPage, LoginPage, PostPage, Comment, AddPostPage } from './component';
 import { Route, Routes } from 'react-router-dom';
-import Comment from './component/Comment';
 import SignUp from './component/SignUp';
+import CommentStyle from './component/CommentStyle';
+
 
 function App() {
   return (
@@ -13,8 +12,11 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/post" element={<PostPage />} />
+        <Route path="post/decor" element={<CommentStyle />} />
         <Route path="/post/comment" element={<Comment />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/add" element={<AddPostPage />} />
+
       </Routes>
     </div>
   );

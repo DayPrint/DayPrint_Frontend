@@ -1,11 +1,10 @@
 import React from 'react';
 import '../style/styles.css';
-import Header from './Header';
-
 const LoginPage = () => {
 
   return (
     <div id="sign_up">
+
       {/* <Header /> */}
       <div className="content">
         <h2 class="banner-tt"><a href="/">DayPrint </a>회원가입</h2>

@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/styles.css';
-import Header from './Header';
 
 const LoginPage = () => {
 

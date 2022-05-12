@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap);
+
+.comment{
+    background-color: #ffeead;
+}
+p{
+    font: 50px 'Dongle', sans-serif;
+}
+.comment input{
+    font: 30px 'Dongle', sans-serif;
+    border-radius: 30px;
+}
