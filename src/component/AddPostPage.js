@@ -22,8 +22,8 @@ const AddPostPage = () => {
     //     console.log(params);
     // }
     return (
-        <Header/>
         <div className='addpostform'>
+            <Header/>
             {/* <div>
                 <ul id="theme">
                     {theme.map((th, i) => {

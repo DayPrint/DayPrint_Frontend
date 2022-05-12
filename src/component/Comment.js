@@ -1,13 +1,13 @@
 import React from 'react';
 import '../style/css/comment.css';
 import '../style/css/button.css';
-import Header from './Header/js'
+import Header from './Header.js'
 
 const Comment = () => {
 
   return (
-    <Header/>
     <div>
+      <Header/>
       <div className="comment">
         <p>메시지를 남겨주세요</p>
         <textarea name="text" placeholder="write here" />

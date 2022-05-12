@@ -7,8 +7,8 @@ import Header from './Header.js'
 const MainPage = () => {
 
   return (
-    <Header/>
     <div>
+      <Header/>
       <div className="MyAccount">
         <div className="account">OOO님의 기념일을 친구와 공유해보세요!</div>
       </div>
