@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const API_URL = "http://3.36.98.223:8080/post/";
+const API_URL = "http://3.36.98.223:8080/api/post/";
 
 class PostService{
     tempUser(){
         localStorage.setItem('user',JSON.stringify({
             "id": 1,
-            "jwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHJpbmciLCJ1c2VyUGsiOiJzdHJpbmciLCJpYXQiOjE2NTI0MjQxNTYsImV4cCI6MTY1MjQyNTk1Nn0.pGzDFN6j8c_-KaC5Y7cH8jWklZOPNy7cYXz-jPAZVWc"
+            "jwtToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHJpbmciLCJ1c2VyUGsiOiJzdHJpbmciLCJpYXQiOjE2NTI0MjY2NzcsImV4cCI6MTY1MjQyODQ3N30.UjETmD8l8dZf_H-zAOyU-U2ULI8rEJO4NLwI6uVXdIM"
         }))
     }
     addpost(inputs){

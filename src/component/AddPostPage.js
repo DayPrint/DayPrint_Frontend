@@ -19,11 +19,11 @@ const AddPostPage = () => {
         ...inputs,
         [e.target.name]:e.target.value
         });
-        console.log(inputs);
     };
     const post=(e)=>{
         e.preventDefault();
         PostService.addpost(inputs);
+        console.log(inputs);
       }
     return (
         <div className='addpostform'>
@@ -37,7 +37,7 @@ const AddPostPage = () => {
                 <div class='form'>
                     <div>
                         <label for="title">나의 기념일</label>
-                        <input type="text" id='title' name="title" onChange={onChange} placeholder="제목" value="제목" />
+                        <input type="text" id='title' name="title" onChange={onChange} placeholder="제목" />
                     </div>
                     <div>
                         <label for="date">기념 날짜</label>
@@ -48,6 +48,7 @@ const AddPostPage = () => {
                         <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='설명' />
                     </div>
                 </div>
+                <button type='submit' onClick={post}>입력하시오</button>
             </form>
             <a href="/post" className="myButton">입력</a>
         </div>
