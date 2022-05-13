@@ -4,20 +4,19 @@ const API_URL = "http://3.36.98.223:8080/";
 
 class AuthService {
   login(username, password) {
+    console.log(username, password);
     return axios
       .post(API_URL + "login", {
-        username,
-        password
+        "email":username,
+        "password":password
       })
       .then(response => {
         console.log("login 응답데이터 헤더" + JSON.stringify(response));
-        let user = {};
-        if(response.headers['access-token']) {
-          user = response.data;
-          user.accessToken = response.headers['access-token'];
-          localStorage.setItem("user", JSON.stringify(user));
+        if(response) {
+          console.log(response);
+          localStorage.setItem("user", JSON.stringify(response.data.result));
         }
-        return user;
+        return response;
       });
   }
 

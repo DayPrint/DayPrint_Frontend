@@ -4,7 +4,7 @@ import '../style/css/addpostpage.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/css/button.css'
 import Header from './Header.js'
-import PostService from '../service/post.service.js';
+import PostService from '../service/post.service';
 
 const AddPostPage = () => {
     const [inputs, setInputs]=useState({
