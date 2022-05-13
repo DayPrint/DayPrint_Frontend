@@ -44,7 +44,7 @@ const AddPostPage = () => {
                     </div>
                     <div>
                         <label for="date">기념 날짜</label>
-                        <input type="datetime-local" id='date' name="date" placeholder="날짜" />
+                        <input type="date" id='date' name="date" placeholder="날짜" />
                     </div>
                     <div>
                         <label for="explanation">설명</label>
