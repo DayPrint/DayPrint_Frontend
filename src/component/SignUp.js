@@ -20,7 +20,6 @@ const LoginPage = () => {
       ...inputs,
       [e.target.name]:e.target.value
     });
-    console.log(inputs);
   };
   const myRef=useRef(null);
   const file=useRef(null);
