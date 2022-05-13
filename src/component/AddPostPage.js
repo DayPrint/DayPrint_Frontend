@@ -24,7 +24,8 @@ const AddPostPage = () => {
     const post=(e)=>{
         e.preventDefault();
         PostService.addpost(inputs);
-      }
+    }
+    
     return (
         <div className='addpostform'>
             <Header/>
