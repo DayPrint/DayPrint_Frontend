@@ -1,7 +1,9 @@
-import React,{ useState } from 'react';
+import React,{ useState ,useRef} from 'react';
 import '../style/css/imageupload.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
+import AuthService from '../service/auth.service';
+
 const LoginPage = () => {
   const [inputs, setInputs]=useState({
     username:"",
@@ -18,15 +20,24 @@ const LoginPage = () => {
       ...inputs,
       [e.target.name]:e.target.value
     });
-    console.log(inputs);
   };
+  const myRef=useRef(null);
+  const file=useRef(null);
+  const getFilePath=()=>{
+    myRef.current.placeholder=file.current.value;
+    inputs[imagefile]=file.current.value;
+  }
+  const register=(e)=>{
+    e.preventDefault();
+    AuthService.register(inputs);
+  }
   return (
     <div id="sign_up">
 
       {/* <Header /> */}
       <div className="content">
         <h2 class="banner-tt"><a href="/">DayPrint </a>회원가입</h2>
-        <form autoComplete="off" action="" method="POST" class="sign_up_form">
+        <form autoComplete="off" onSubmit={register} class="sign_up_form">
           <div className="field">
             <label for="userName" class="hidden">Name</label>
             <i className="fas fa-user" />
@@ -54,10 +65,10 @@ const LoginPage = () => {
           </div>
           <div class="filebox">
                     <label for="file"><img src={img} /></label>
-                    <input class="upload-name" value="첨부파일" placeholder="첨부파일" />
-                    <input type="file" id="file" name="imagefile" onChange={onChange} />
+                    <input class="upload-name"  ref={myRef}  />
+                    <input type="file" id="file" name="imagefile" onChange={getFilePath} ref={file} />
                 </div>
-          <input type="submit" className="field" value="DayPrint 계정 만들기" />
+          <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={()=>console.log(inputs)} />
         </form>
         <div class="sign_up_container">
           <div class="sign_up_link">
