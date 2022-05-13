@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/styles.css';
+import FooterLogo from "./FooterLogo";
 
 const LoginPage = () => {
 
@@ -27,6 +28,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <FooterLogo/>
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React,{ useState } from 'react';
 import '../style/css/imageupload.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
+import FooterLogo from './FooterLogo';
+
 const LoginPage = () => {
   const [inputs, setInputs]=useState({
     username:"",
@@ -66,6 +68,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <FooterLogo/>
     </div>
   )
 }

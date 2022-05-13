@@ -3,9 +3,9 @@ import '../style/postpage.css';
 import Header from './Header';
 import PostComs from './PostComs';
 import PostContainer from './PostContainer';
+import FooterLogo from './FooterLogo';
 
 const PostPage = () => {
-
   return (
     <body>
         <Header />
@@ -35,8 +35,8 @@ const PostPage = () => {
           </div>
       </main>
       <footer>
+        <FooterLogo/>
       </footer>
-  
   </body>
   )
 }
