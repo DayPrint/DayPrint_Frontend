@@ -1,9 +1,8 @@
-import React,{ useState } from 'react';
-import authService from '../service/auth.service';
+import React,{ useState ,useRef} from 'react';
 import '../style/css/imageupload.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
-import authService from '../service/auth.service';
+import AuthService from '../service/auth.service';
 
 const LoginPage = () => {
   const [inputs, setInputs]=useState({
@@ -23,8 +22,15 @@ const LoginPage = () => {
     });
     console.log(inputs);
   };
-  const register=()=>{
-    authService.register(inputs);
+  const myRef=useRef(null);
+  const file=useRef(null);
+  const getFilePath=()=>{
+    myRef.current.placeholder=file.current.value;
+    inputs[imagefile]=file.current.value;
+  }
+  const register=(e)=>{
+    e.preventDefault();
+    AuthService.register(inputs);
   }
   return (
     <div id="sign_up">
@@ -32,38 +38,38 @@ const LoginPage = () => {
       {/* <Header /> */}
       <div className="content">
         <h2 class="banner-tt"><a href="/">DayPrint </a>회원가입</h2>
-        <form autoComplete="off" action="" method="POST" class="sign_up_form">
+        <form autoComplete="off" onSubmit={register} class="sign_up_form">
           <div className="field">
             <label for="userName" class="hidden">Name</label>
             <i className="fas fa-user" />
-            <input type="text" id="userName" name="username"  placeholder="  사용자이름" />
+            <input type="text" id="userName" name="username" onChange={onChange} placeholder="  사용자이름" />
           </div>
           <div className="field">
             <label for="phone" class="hidden">PhoneNumber</label>
             <i className="fas fa-user" />
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"  placeholder="  연락처" />
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" onChange={onChange} placeholder="  연락처" />
           </div>
           <div className="field">
             <label for="userEmail" class="hidden">email</label>
             <i className="far fa-envelope" />
-            <input type="email" id="userEmail" name="id"  placeholder="  아이디(E-mail)" required />
+            <input type="email" id="userEmail" name="id" onChange={onChange} placeholder="  아이디(E-mail)" required />
           </div>
           <div className="field">
             <label for="userPass" class="hidden">password</label>
             <i className="fas fa-lock" />
-            <input type="password" id="userPass" name="passwd1"  placeholder="  비밀번호" required/>
+            <input type="password" id="userPass" name="passwd1" onChange={onChange} placeholder="  비밀번호" required/>
           </div>
           <div className="field">
             <label for="userPass" class="hidden">password</label>
             <i className="fas fa-lock" />
-            <input type="password" id="passConfirm" name="passwd2"  placeholder="  비밀번호 확인" />
+            <input type="password" id="passConfirm" name="passwd2" onChange={onChange} placeholder="  비밀번호 확인" />
           </div>
           <div class="filebox">
                     <label for="file"><img src={img} /></label>
-                    <input class="upload-name" value="첨부파일" placeholder="첨부파일" />
-                    <input type="file" id="file" name="imagefile"  />
+                    <input class="upload-name"  ref={myRef}  />
+                    <input type="file" id="file" name="imagefile" onChange={getFilePath} ref={file} />
                 </div>
-          <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={onChange} />
+          <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={()=>console.log(inputs)} />
         </form>
         <div class="sign_up_container">
           <div class="sign_up_link">
