@@ -4,6 +4,7 @@ import '../style/css/addpostpage.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/css/button.css'
 import Header from './Header.js'
+import FooterLogo from './FooterLogo'
 
 const AddPostPage = () => {
     // const theme = ['Christmas', 'New Year', 'Birthday', 'Graduation', 'Marriage'];
@@ -52,7 +53,8 @@ const AddPostPage = () => {
                     </div>
                 </div>
             </form>
-            <a href="/post" className="myButton">입력</a>
+            <a href="/post" className="myButton">스토리 만들기</a>
+            <FooterLogo/>
         </div>
     );
 };
