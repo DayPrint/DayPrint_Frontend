@@ -1,22 +1,26 @@
 import axios from "axios";
 import '../style/header.css';
 
-const API_URL = "http://3.36.98.223:8080/post/";
+const API_URL = "http://127.0.0.1:8080/api/post/";
 
 class PostService{
     addpost(inputs){
+        console.log("post start");
+        console.log(inputs);
         const user=JSON.parse(localStorage.getItem('user'));
-        return axios.post(API_URL+user.id,{
-            imageUrl:inputs.file,
-            //theme:,
-            postcontent:inputs.explanation,
-            targetDate:inputs.date,
-            title:inputs.title,
-            userId:user.id,
+        console.log(user);
+        axios.post(API_URL+user.id,{
+            data:{
+                imageUrl:inputs.file,
+                postContent:inputs.explanation,
+                targetDate:inputs.date,
+                title:inputs.title,
+                userId:user.id
+            },
             headers:{
-                Authorization:user.jwtToken
+                Authorization:user.jwtToken,
             }
-        }).then((res)=>console.log(res))
+        }).then((res)=>console.log(res));
     }
 }
 
