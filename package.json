@@ -45,5 +45,5 @@
   "devDependencies": {
     "react-router-dom": "^6.3.0"
   },
-  "proxy":"http://3.36.98.223:8080"
+  "proxy": "http://3.36.98.223:8080"
 }
