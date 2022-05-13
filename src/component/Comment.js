@@ -4,7 +4,6 @@ import '../style/css/button.css';
 import Header from './Header.js'
 
 const Comment = () => {
-
   return (
     <div>
       <Header/>

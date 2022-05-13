@@ -12,6 +12,6 @@ const PostComs = () => {
             </li>
         </a>
     )
-  }
+}
   
-  export default PostComs;
+export default PostComs;
