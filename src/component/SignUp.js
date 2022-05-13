@@ -1,4 +1,5 @@
 import React,{ useState } from 'react';
+import authService from '../service/auth.service';
 import '../style/css/imageupload.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
@@ -19,6 +20,9 @@ const LoginPage = () => {
       [e.target.name]:e.target.value
     });
   };
+  const register=()=>{
+    authService.register(inputs);
+  }
   return (
     <div id="sign_up">
 
