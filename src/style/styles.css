@@ -543,7 +543,7 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
     font-family: 'Dongle', sans-serif;
 }
 #sign_up{
-    padding: 81px 0;
+    padding-top: 81px;
 }
 #sign_up .banner-tt{
     font-size: 50px;
