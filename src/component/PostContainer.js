@@ -4,7 +4,7 @@ import '../style/postpage.css';
 const PostContainer = () => {
     return (
         <div>
-            <h2>22.05.19</h2>
+            <h2 >22.05.19</h2>
             <div class="postpage_container">
                 <nav>
                     <div class="postpoage_picture">기념일 사진</div>

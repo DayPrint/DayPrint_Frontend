@@ -2,10 +2,11 @@ import React from 'react';
 import '../style/styles.css';
 import Footer from './Footer';
 import Header from './Header.js'
+import postService from '../service/post.service';
 
 
 const MainPage = () => {
-
+  
   return (
     <div>
       <Header/>
@@ -22,6 +23,7 @@ const MainPage = () => {
         <div><a href="/post">yyyy.mm.dd</a></div>
         <div><a href="/post">yyyy.mm.dd</a></div>
         <div><a href="/post">yyyy.mm.dd</a></div>
+        <button onClick={postService.getpost}>Click</button>
       </div>
       {/* <div className="Instagram">instagram</div> */}
       <Footer />
