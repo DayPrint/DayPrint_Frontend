@@ -20,7 +20,7 @@ const LoginPage = () => {
             <i className="fas fa-lock" />
             <input type="password" id="userPass" name="userpw" placeholder="  비밀번호" />
           </div>
-          <input type="submit" className="field" value="로그인" />
+          <button type="submit" className="field loginin" value="로그인"><a href='/'>로그인</a></button>
         </form>
         <div>
           <div>

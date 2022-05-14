@@ -59,7 +59,7 @@ const LoginPage = () => {
                     <input class="upload-name" value="첨부파일" placeholder="첨부파일" />
                     <input type="file" id="file" name="imagefile" onChange={onChange} />
                 </div>
-          <input type="submit" className="field" value="DayPrint 계정 만들기" />
+          <button type="submit" className="field signupup" value="DayPrint 계정 만들기"><a href='/login'>DayPrint 계정 만들기</a></button>
         </form>
         <div class="sign_up_container">
           <div class="sign_up_link">
