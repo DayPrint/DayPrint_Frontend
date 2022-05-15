@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useReducer } from "react";
 
-//const API_URL = "http://3.36.98.223:8080/api/post/";
-const API_URL="http://localhost:8080/api/post/";
+const API_URL = "http://3.36.98.223:8080/api/post/";
+//const API_URL="http://localhost:8080/api/post/";
 
 class PostService{
     addpost(inputs){
@@ -18,8 +18,12 @@ class PostService{
                 title:inputs.title,
                 userId:user.id
             }
-            return axios.post(API_URL+user.id,data,{
-                'Authorization':user.jwtToken
+            return axios({
+                method:'post',
+                url:API_URL+user.id,
+                headers:{
+                Authorization:user.jwtToken},
+                data:data,
             }).then((res)=>console.log(res)).catch(error=>console.log(error.response));
         }else{
             console.log('no user login plz');
