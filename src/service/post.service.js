@@ -8,8 +8,8 @@ class PostService {
     constructor(data){
         this.data=data;
     }
-    addpost(inputs) {
 
+    addpost(inputs) {
         const user = JSON.parse(localStorage.getItem('user'));
         if (user && user.jwtToken) {
             console.log(user.jwtToken);
@@ -33,6 +33,7 @@ class PostService {
             console.log('no user login plz');
         }
     }
+
     getpost() {
         const user = JSON.parse(localStorage.getItem('user'));
         if (user && user.jwtToken) {
@@ -43,14 +44,11 @@ class PostService {
                 headers: {
                     Authorization: user.jwtToken
                 }
-            }).then((res) =>{this.data=res.data}).catch(error => console.log(error));
-            // return axios.get(
-            //     API_URL+user.id,{
-            //         headers:{
-            //             Authorization:user.jwtToken
-            //         }
-            //     }
-            // ).then((res)=>console.log(res));
+            }).then((res) =>{
+                console.log(res.data);
+                return res.data;
+            })
+            .catch(error => console.log(error));
         }
     }
 }
