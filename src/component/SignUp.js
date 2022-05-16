@@ -4,6 +4,7 @@ import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
 import AuthService from '../service/auth.service';
 import { useNavigate } from 'react-router-dom';
+import FooterLogo from './FooterLogo';
 
 const LoginPage = () => {
   const navigator = useNavigate();
@@ -41,6 +42,10 @@ const LoginPage = () => {
         <h2 class="banner-tt"><a href="/">DayPrint </a>회원가입</h2>
         <form autoComplete="off" onSubmit={register} class="sign_up_form">
           <div className="field">
+                <label for="upload">대표이미지 선택하기</label>
+                <input type="file" id="uploadfile" placeholder='파일 찾아서 업로드'></input>
+          </div>
+          <div className="field">
             <label for="userName" class="hidden">Name</label>
             <i className="fas fa-user" />
             <input type="text" id="userName" name="username" onChange={onChange} placeholder="  사용자이름" />
@@ -65,11 +70,11 @@ const LoginPage = () => {
             <i className="fas fa-lock" />
             <input type="password" id="passConfirm" name="passwd2" onChange={onChange} placeholder="  비밀번호 확인" />
           </div>
-          <div class="filebox">
+          {/* <div class="filebox">
                     <label for="file"><img src={img} /></label>
                     <input class="upload-name"  ref={myRef}  />
                     <input type="file" id="file" name="imagefile" onChange={getFilePath} ref={file} />
-                </div>
+                </div> */}
           <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={()=>console.log(inputs)} />
         </form>
         <div class="sign_up_container">
@@ -79,6 +84,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <FooterLogo/>
     </div>
   )
 }

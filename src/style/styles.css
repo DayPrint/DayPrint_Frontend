@@ -591,6 +591,14 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
 #sign_up .field input::placeholder, .field i {
     color:#A8A8A8;;
 }
+#sign_up .field:nth-child(1) input{
+    font-size: 18px;
+    margin-left: 116px;
+    width: 200px;
+}
+#sign_up .field:nth-child(1) label{
+    font-size: 27px;
+}
 #sign_up .field i {
     margin-right: 2px;
     font-size: 20px;

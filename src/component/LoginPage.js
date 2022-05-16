@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link, Navigate, Redirect, useNavigate} from "react-router-dom"
 import '../style/styles.css';
 import authService from '../service/auth.service';
+import FooterLogo from "./FooterLogo";
 
 const LoginPage = () => {
   let navigator =useNavigate();
@@ -53,9 +54,9 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <FooterLogo/>
     </div>
   );
 };
 
 export default LoginPage;
-

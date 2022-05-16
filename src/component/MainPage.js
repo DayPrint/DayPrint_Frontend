@@ -5,6 +5,9 @@ import Header from './Header.js'
 import postService from '../service/post.service';
 import axios from 'axios';
 import DisplayList from './DisplayList';
+import MainMyAccount from './MainMyAccount';
+import MainMyWorkplace from './MainMyWorkplace';
+
 import '../index.css';
 
 
@@ -30,22 +33,14 @@ const MainPage = () => {
       setError(error);
     }
   }
-
-  useEffect(() => { 
-    fetchData(); }, []);
+  useEffect(() => { fetchData(); }, []);
   
+    
   return (
     <div>
       <Header />
-      <div className="MyAccount">
-        <div className="account">OOO님의 기념일을 친구와 공유해보세요!</div>
-        <div><DisplayList data={data}/></div>
-        <div></div>
-      </div>
-      {/* <DisplayList data={data} /> */}
-      {/* <button onClick={postService.getpost}>Click</button> */}
-      
-      {/* <div className="Instagram">instagram</div> */}
+      <MainMyAccount/>
+      <MainMyWorkplace/>
       <Footer />
     </div>
   )
