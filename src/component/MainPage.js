@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../style/styles.css';
 import Footer from './Footer';
 import Header from './Header.js'
-import DisplayList from './DisplayList';
 import postService from '../service/post.service';
 import MainMyAccount from './MainMyAccount';
 import MainMyWorkplace from './MainMyWorkplace';
