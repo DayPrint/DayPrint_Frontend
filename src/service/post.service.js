@@ -1,8 +1,12 @@
 import axios from "axios";
+import React,{useState} from "react";
 
 const API_URL="http://3.36.98.223:8080/api/post/";
 
 class PostService {
+    constructor(data){
+        this.data=data;
+    }
     addpost(inputs) {
 
         const user = JSON.parse(localStorage.getItem('user'));
@@ -38,7 +42,7 @@ class PostService {
                 headers: {
                     Authorization: user.jwtToken
                 }
-            }).then((res) =>{return res.data}).catch(error => console.log(error));
+            }).then((res) =>{this.data=res.data}).catch(error => console.log(error));
             // return axios.get(
             //     API_URL+user.id,{
             //         headers:{
