@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../style/styles.css';
 import Footer from './Footer';
 import Header from './Header.js'
-import postService from '../service/post.service';
-import axios from 'axios';
 import DisplayList from './DisplayList';
+import postService from '../service/post.service';
 import MainMyAccount from './MainMyAccount';
 import MainMyWorkplace from './MainMyWorkplace';
 
@@ -18,8 +17,7 @@ const MainPage = () => {
 
   const fetchData = async () => {
     try {
-      const user = JSON.parse(localStorage.getItem('user'));
-      console.log(user);
+
       const response = await postService.getpost();
 
       console.log("<= response => ");
@@ -30,7 +28,7 @@ const MainPage = () => {
       setData(response);
       console.log(data.length);
     } catch (e) {
-      setError(error);
+      setError(e);
     }
   }
   useEffect(() => { fetchData(); }, []);
