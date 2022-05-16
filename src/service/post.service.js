@@ -5,13 +5,6 @@ import React, { useState } from "react";
 const API_URL = "http://3.36.98.223:8080/api/post/";
 
 class PostService {
-<<<<<<< HEAD
-    addpost(inputs) {
-=======
-    constructor(data){
-        this.data=data;
-    }
->>>>>>> 943cd5d8474deca6c92bad411210b395c3b9d8cf
 
     addpost(inputs) {
         const user = JSON.parse(localStorage.getItem('user'));
