@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import '../style/css/button.css';
-import '../style/css/addpostpage.css';
-import img from '../style/images/file-image-solid.svg'
-import '../style/css/button.css'
+import '../style/css/addpost.css';
+import '../style/styles.css';
 import Header from './Header.js'
 import PostService from '../service/post.service';
+// import img from '../style/images/file-image-solid.svg'
+// import '../style/css/button.css';
+// import '../style/css/addpostpage.css';
+// import '../style/css/button.css'
+import FooterLogo from './FooterLogo';
+import '../style/css/button.css';
+
 
 const AddPostPage = () => {
     const [inputs, setInputs]=useState({
@@ -13,7 +18,7 @@ const AddPostPage = () => {
         date:"",
         explanation:""
       })
-    const {file,date,explanation,title}=inputs;
+    const {uploadfile,date,explanation,title}=inputs;
     const onChange=e=>{
         setInputs({
         ...inputs,
@@ -26,32 +31,33 @@ const AddPostPage = () => {
         console.log(inputs);
       }
     return (
-        <div className='addpostform'>
-            <Header/>
-            <form autoComplete="off" onSubmit={post}>
-                <div class="filebox">
-                    <label for="file"><img src={img} /></label>
-                    <input class="upload-name" value="첨부파일" name="file" onChange={onChange} placeholder="첨부파일" />
-                    <input type="file" id="file" />
-                </div>
-                <div class='form'>
-                    <div>
-                        <label for="title">나의 기념일</label>
-                        <input type="text" id='title' name="title" onChange={onChange} placeholder="제목" />
-                    </div>
-                    <div>
-                        <label for="date">기념 날짜</label>
-                        <input type="date" id='date' name="date" onChange={onChange} placeholder="날짜" />
-                    </div>
-                    <div>
-                        <label for="explanation">설명</label>
-                        <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='설명' />
-                    </div>
-                </div>
-                <button type='submit' onClick={post}>입력하시오</button>
-            </form>
-            <a href="/post" className="myButton">입력</a>
-        </div>
+        <div id="addpost">
+
+      <Header />
+      <div className="content">
+        <form autoComplete="off" action="" method="POST" class="" onSubmit={post}>
+            <div className="field">
+                <input type="file" id="uploadfile" placeholder='파일 찾아서 업로드'></input>
+                <label for="upload">기념일 사진 찾기</label>
+            </div>
+            <div className="field">
+                <label for="title" class="fieldtext">나의 기념일</label>
+                <input type="text" id='title' name="title" onChange={onChange} placeholder="  제목" />
+            </div>
+            <div className="field">
+                <label for="date" class="fieldtext">기념일 날짜</label>
+                <input type="date" id='date' name="date" onChange={onChange} placeholder="날짜" />
+            </div>
+            <div className="field field_des">
+                <label for="explanation" class="fieldtext">설명</label>
+                <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='  기념일의 설명' />
+            </div>
+          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기"><a href='/post'>스토리 작성하기</a></button>
+        </form>
+      </div>
+      
+      <FooterLogo/>
+    </div>
     );
 };
 
