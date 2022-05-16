@@ -1,5 +1,4 @@
 import React from 'react';
-import "../style/styles.css"
 
 const DisplayPost = ({datum}) => {
     return <div key={datum.id}><a href={"http://3.36.98.223:8080/api/postdetail/"+datum.id}>{datum.title}</a></div>;
