@@ -3,8 +3,10 @@ import '../style/css/imageupload.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
 import AuthService from '../service/auth.service';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigator = useNavigate();
   const [inputs, setInputs]=useState({
     username:"",
     phone:"",
@@ -27,13 +29,13 @@ const LoginPage = () => {
     myRef.current.placeholder=file.current.value;
     inputs[imagefile]=file.current.value;
   }
-  const register=(e)=>{
+  const register= async (e)=>{
     e.preventDefault();
-    AuthService.register(inputs);
+    await AuthService.register(inputs);
+    navigator("/login");
   }
   return (
     <div id="sign_up">
-
       {/* <Header /> */}
       <div className="content">
         <h2 class="banner-tt"><a href="/">DayPrint </a>회원가입</h2>

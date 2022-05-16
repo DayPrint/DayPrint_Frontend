@@ -10,17 +10,13 @@ class PostService{
         const user=JSON.parse(localStorage.getItem('user'));
         console.log(user);
         axios.post(API_URL+user.id,{
-            data:{
-                imageUrl:inputs.file,
-                postContent:inputs.explanation,
-                targetDate:inputs.date,
-                title:inputs.title,
-                userId:user.id
-            },
             headers:{
-                Authorization:user.jwtToken,
+                "Access-Control-Allow-Origin":"*",
+                "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"],
+                "Access-Control-Allow-Headers": ["Authorization", "Content-Type", "X-Auth-Token", "Origin"],
+                "Authorization":user.jwtToken
             }
-        }).then((res)=>console.log(res));
+        }).then((res)=>console.log(res)).catch(e => console.log(e));
     }
 }
 
