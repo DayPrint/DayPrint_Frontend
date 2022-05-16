@@ -1,4 +1,5 @@
 import axios from "axios";
+import '../style/header.css';
 
 const API_URL="http://3.36.98.223:8080/api/post/";
 
