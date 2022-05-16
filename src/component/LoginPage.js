@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
+import {Link, Navigate, Redirect, useNavigate} from "react-router-dom"
 import '../style/styles.css';
 import authService from '../service/auth.service';
 
 const LoginPage = () => {
-
+  let navigator =useNavigate();
   const [inputs, setInputs] = useState({
     email: "",
     password: ""
@@ -17,9 +18,15 @@ const LoginPage = () => {
     console.log(inputs);
   };
 
-  const handleLogin= (e)=>{
+  const handleLogin=async (e)=>{
     e.preventDefault();
-    authService.login(inputs.email,inputs.password)
+    await authService.login(inputs.email,inputs.password);
+    if(localStorage.getItem('user').match("undefined")){
+      console.log("fail");
+    }
+    else{
+      navigator("/");  
+    }
   }
 
   return (
