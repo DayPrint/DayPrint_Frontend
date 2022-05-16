@@ -9,9 +9,10 @@ import PostService from '../service/post.service';
 // import '../style/css/button.css'
 import FooterLogo from './FooterLogo';
 import '../style/css/button.css';
-
+import { useNavigate } from 'react-router-dom';
 
 const AddPostPage = () => {
+    const navigator = useNavigate();
     const [inputs, setInputs]=useState({
         file:"",
         title:"",
@@ -25,10 +26,11 @@ const AddPostPage = () => {
         [e.target.name]:e.target.value
         });
     };
-    const post=(e)=>{
+    const post= async (e)=>{
         e.preventDefault();
-        PostService.addpost(inputs);
+        await PostService.addpost(inputs);
         console.log(inputs);
+        return navigator("/");
     }
     return (
         <div id="addpost">
@@ -37,7 +39,7 @@ const AddPostPage = () => {
       <div className="content">
         <form autoComplete="off" action="" method="POST" class="" onSubmit={post}>
             <div className="field">
-                <input type="file" id="uploadfile" placeholder='파일 찾아서 업로드'></input>
+                <input type="file" id="file" placeholder='파일 찾아서 업로드' onChange={onChange}></input>
                 <label for="upload">기념일 사진 찾기</label>
             </div>
             <div className="field">
@@ -52,7 +54,7 @@ const AddPostPage = () => {
                 <label for="explanation" class="fieldtext">설명</label>
                 <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='  기념일의 설명' />
             </div>
-          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기"><a href='/post'>스토리 작성하기</a></button>
+          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 작성하기</button>
         </form>
       </div>
       

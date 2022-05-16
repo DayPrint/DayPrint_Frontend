@@ -13,7 +13,7 @@ class PostService {
             const data = {
                 imageUrl: inputs.file,
                 //theme:,
-                postcontent: inputs.explanation,
+                postContent: inputs.explanation,
                 targetDate: inputs.date,
                 title: inputs.title,
                 userId: user.id
