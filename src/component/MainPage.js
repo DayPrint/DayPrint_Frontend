@@ -13,9 +13,9 @@ const MainPage = () => {
   const fetchData = async () => {
     try {
       const user = JSON.parse(localStorage.getItem('user'));
-      const response = postService.getpost();
-      setData(response.then(result=>{return result}));
-      console.log(response.then(result=>{return result}));
+      const response = postService.data;
+      setData(postService.data);
+      console.log(data);
     } catch (e) {
       setError(error);
     }
