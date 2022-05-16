@@ -3,20 +3,11 @@ import '../style/styles.css';
 import Footer from './Footer';
 import Header from './Header.js'
 import DisplayList from './DisplayList';
-<<<<<<< HEAD
-import postService from '../service/post.service';
-
-
-const MainPage = () => {
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
-=======
 import '../index.css';
 
 
 const MainPage = () => {
   const [data, setData] = useState([]);
->>>>>>> 943cd5d8474deca6c92bad411210b395c3b9d8cf
   const [error, setError] = useState();
 
 
