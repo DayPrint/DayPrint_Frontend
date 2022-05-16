@@ -29,7 +29,7 @@ const AddPostPage = () => {
         e.preventDefault();
         PostService.addpost(inputs);
         console.log(inputs);
-      }
+    }
     return (
         <div id="addpost">
 
