@@ -1,6 +1,7 @@
 import axios from "axios";
 import React,{useState} from "react";
 
+
 const API_URL="http://3.36.98.223:8080/api/post/";
 
 class PostService {

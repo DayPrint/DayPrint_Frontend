@@ -17,7 +17,8 @@ class AuthService {
           localStorage.setItem("user", JSON.stringify(response.data.result));
         }
         return response;
-      });
+      })
+      .catch(e => console.log(e));
   }
 
   logout() {
@@ -31,7 +32,8 @@ class AuthService {
       name:inputs.username,
       password:inputs.passwd1,
       phone:inputs.phone
-    }).then((res)=>console.log(res));
+    }).then((res)=>console.log(res))
+    .catch(e => console.log(e));
   }
 
   getCurrentUser() {
