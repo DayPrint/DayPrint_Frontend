@@ -18,6 +18,35 @@ main h2{
 /*------postpage_conatianer------*/
 main .postpage_container{
 }
+main .postmenu{
+    /* border: 3px solid greenyellow; */
+}
+main .postmenu .pm_list{
+    /* border: 1px solid purple; */
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+main .postmenu .pm_list li{
+    /* border: 1px solid lightcoral; */
+    font-size: 25px;
+    margin-right: 10px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+.link{
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(0, 0, 0, 0);
+    transition: text-decoration-color .5s ease-out;
+}
+.link:hover{
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(0, 0, 0, 0.4);
+}
 main .border1{
     border-top: calc(10px) solid rgb(145, 41, 41);
     border-right: calc(10px) solid rgb(77, 21, 21);
