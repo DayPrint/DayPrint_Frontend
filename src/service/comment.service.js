@@ -18,5 +18,23 @@ class CommentService{
             .catch(error => console.log(error.response));
         }
     }
+
+    addComment(inputs) {
+        const user = authService.getCurrentUser();
+        const data = {
+            "author": inputs.author,
+            "text": inputs.text
+        }
+        return axios({
+            method: 'post',
+            url: API_URL +inputs.postId,
+            data: data,
+            headers: {
+                Authorization: user.jwtToken
+            },
+        })
+        .then((res) => console.log(res))
+        .catch(error => console.log(error.response));
+    }
 }
 export default new CommentService();
