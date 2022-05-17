@@ -24,15 +24,14 @@ const LoginPage = () => {
     if (e.target.value != inputs.passwd1) {
       setpasswdCheck(true);
       setInputs({
+        ...inputs,
         passwd2:e.target.value
       });
-      console.log("다르다"+inputs.passwd1+inputs.passwd2);
     } else {
       setpasswdCheck(false);
       setInputs({
         passwd2: e.target.value
       });
-      console.log("같다"+inputs.passwd1+inputs.passwd2);
     }
   }
   const onChange = e => {
@@ -40,6 +39,7 @@ const LoginPage = () => {
       ...inputs,
       [e.target.name]: e.target.value
     });
+    console.log(inputs);
   };
   const myRef = useRef(null);
   const file = useRef(null);
@@ -88,7 +88,7 @@ const LoginPage = () => {
             <input type="password" id="passConfirm" name="passwd2" onChange={checkPasswd} placeholder="  비밀번호 확인" />
             
           </div>
-          {passwdCheck&&(<div>패스워드가 같지 않습니다.</div>)}
+          {passwdCheck&&(<h3>패스워드가 같지 않습니다.</h3>)}
       
           <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={() => console.log(inputs)} />
         </form>
