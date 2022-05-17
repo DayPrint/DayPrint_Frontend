@@ -15,7 +15,7 @@ function App() {
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add" element={<AddPostPage />} />
-        <Route path="/edit" element={<EditPostPage />} />
+        <Route path="/edit/:id" element={<EditPostPage />} />
         <Route path="/post/comment/:id" element={<AddComs />} />
       </Routes>
     </div>

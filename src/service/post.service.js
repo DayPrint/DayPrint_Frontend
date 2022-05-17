@@ -81,6 +81,33 @@ class PostService {
             .catch(error => console.log(error));
         }
     }
+
+    updatePost(inputs){
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.jwtToken) {
+            console.log(user.jwtToken);
+            const data = {
+                imageUrl: inputs.file,
+                //theme:,
+                postContent: inputs.explanation,
+                targetDate: inputs.date,
+                title: inputs.title,
+                userId: user.id
+            }
+            return axios({
+                method: 'put',
+                url: API_URL + "api/postdetail/"+inputs.postId,
+                headers: {
+                    Authorization: user.jwtToken
+                },
+                data: data,
+            })
+            .then((res) => console.log(res))
+            .catch(error => console.log(error.response));
+        } else {
+            console.log('no user login plz');
+        }
+    }
 }
 
 export default new PostService();
