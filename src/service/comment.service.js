@@ -13,7 +13,9 @@ class CommentService{
                 headers: {
                     Authorization: user.jwtToken
                 },
-            }).then((res) => res.data).catch(error => console.log(error.response));
+            })
+            .then((res) =>{ return res.data })
+            .catch(error => console.log(error.response));
         }
     }
 }
