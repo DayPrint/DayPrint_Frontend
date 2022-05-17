@@ -605,6 +605,12 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
     color: rgba(0, 0, 0, 0.8);
     /* line-height: inherit; */
 }
+#sign_up .field div{
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    border:solid 1px red;
+}
 #sign_up input[type="submit"] {
     background:none;
     border:1px solid #000;
