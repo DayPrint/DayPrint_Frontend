@@ -4,15 +4,23 @@ import postService from '../service/post.service';
 import '../style/postpage.css';
 
 const PostContainer = (props) => {
-    const [data, setData] = useState();
+    const [data, setData] = useState({
+        file:"",
+        title:"",
+        targetDate:"",
+        content:""
+    });
     const getData =async () => {
         const response = await postService.getpostdetail(props.id.id);
         setData(response);
+        console.log(response);
+        console.log("데이터 확인")
     }
     useEffect(() => { getData(); }, []);
+
     return (
         <div>
-            <h2 >{data.targetDate}</h2>
+            <h2>{data.targetDate}</h2>
             <div class="postpage_container">
                 <nav>
                     <div class="postpoage_picture">기념일 사진</div>
@@ -21,7 +29,7 @@ const PostContainer = (props) => {
                         {data.title}
                         </li>
                         <li class="postpage_des">
-                        <p>{data.content}</p>
+                        <p>{data.explanation}</p>
                         </li>
                     </ul>
                 </nav>

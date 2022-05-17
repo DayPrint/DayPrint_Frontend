@@ -4,7 +4,6 @@ import '../style/postpage.css';
 import Header from './Header';
 import PostComs from './PostComs';
 import PostContainer from './PostContainer';
-import postdetailService from '../service/postdetail.service';
 
 const PostPage = () => {
     const params = useParams();

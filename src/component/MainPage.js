@@ -11,8 +11,6 @@ import '../index.css';
 
 const MainPage = () => {
   
-  
-    
   return (
     <div>
       <Header />

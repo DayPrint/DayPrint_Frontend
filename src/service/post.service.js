@@ -62,6 +62,24 @@ class PostService {
             }).then((res)=>res.data).catch(e=>console.log(e));
         }
     }
+
+    deletepost(postId) {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.jwtToken) {
+            console.log("user exists")
+            return axios({
+                method: 'delete',
+                url: API_URL + "api/postdetail/" + postId,
+                headers: {
+                    Authorization: user.jwtToken
+                }
+            }).then((res) =>{
+                console.log(res.data);
+                return res.data;
+            })
+            .catch(error => console.log(error));
+        }
+    }
 }
 
 export default new PostService();
