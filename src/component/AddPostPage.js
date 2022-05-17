@@ -79,7 +79,7 @@ const AddPostPage = () => {
                 <label for="explanation" class="fieldtext">설명</label>
                 <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='  기념일의 설명' />
             </div>
-          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 작성하기</button>
+          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={post}>스토리 작성하기</button>
         </form>
       </div>
       <img src={inputs.file}></img>
