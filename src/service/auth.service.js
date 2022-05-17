@@ -1,4 +1,5 @@
 import axios from "axios";
+import ApiError from "../component/ApiError";
 
 const API_URL = "http://3.36.98.223:8080/";
 
@@ -37,7 +38,12 @@ class AuthService {
   }
 
   getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));
+    if(JSON.parse(localStorage.getItem('user'))){
+      return JSON.parse(localStorage.getItem('user'));
+    }
+    else{
+      return <ApiError />;
+    }
   }
 }
 

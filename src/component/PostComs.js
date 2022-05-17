@@ -12,7 +12,7 @@ const PostComs = (data) => {
         showConfirmButton:false,
         timer:3000,
         timerProgressBar:true,
-        
+        width: '65%',
         didOpen: (toast) =>{
             toast.addEventListener('mouseenter', Swal.stopTimer)
             toast.addEventListener('mouseleave', Swal.resumeTimer)

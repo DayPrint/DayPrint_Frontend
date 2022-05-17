@@ -1,10 +1,12 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import ApiError from "../component/ApiError";
 
 
 const API_URL = "http://3.36.98.223:8080/";
+const navigator = useNavigate;
 
 class PostService {
-
     addpost(inputs) {
         const user = JSON.parse(localStorage.getItem('user'));
         if (user && user.jwtToken) {
@@ -24,9 +26,15 @@ class PostService {
                     Authorization: user.jwtToken
                 },
                 data: data,
-            }).then((res) => console.log(res)).catch(error => console.log(error.response));
+            })
+            .then((res) => console.log(res))
+            .catch(error => {
+                console.log(error.response)
+                return <ApiError />;
+            });
         } else {
             console.log('no user login plz');
+            return <ApiError />
         }
     }
 
@@ -41,11 +49,18 @@ class PostService {
                     Authorization: user.jwtToken
                 }
 
-            }).then((res) =>{
+            })
+            .then((res) =>{
                 console.log(res.data);
                 return res.data;
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error)
+                return <ApiError />;
+            });
+        }
+        else{
+            return <ApiError />;
         }
     }
 
@@ -59,8 +74,15 @@ class PostService {
                 headers:{
                     Authorization:user.jwtToken
                 }
-            }).then((res)=>{
-                return res.data;}).catch(e=>console.log(e));
+            })
+            .then((res)=>{return res.data;})
+            .catch(e=>{
+                console.log(e)
+                return <ApiError />;
+            });
+        }
+        else{
+            return <ApiError />;
         }
     }
 
@@ -74,11 +96,18 @@ class PostService {
                 headers: {
                     Authorization: user.jwtToken
                 }
-            }).then((res) =>{
+            })
+            .then((res) =>{
                 console.log(res.data);
                 return res.data;
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                return <ApiError />;
+            });
+        }
+        else {
+            return <ApiError />;
         }
     }
 
@@ -106,6 +135,7 @@ class PostService {
             .catch(error => console.log(error.response));
         } else {
             console.log('no user login plz');
+            return <ApiError />;
         }
     }
 }

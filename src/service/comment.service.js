@@ -1,5 +1,7 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import authService from "./auth.service";
+import ApiError from "../component/ApiError";
 
 const API_URL="http://3.36.98.223:8080/api/comment/"
 
@@ -15,7 +17,13 @@ class CommentService{
                 },
             })
             .then((res) =>{ return res.data })
-            .catch(error => console.log(error.response));
+            .catch(error => {
+                console.log(error.response)
+                return <ApiError />;
+            });
+        }
+        else{
+            return <ApiError />;
         }
     }
 
@@ -34,7 +42,10 @@ class CommentService{
             },
         })
         .then((res) => console.log(res))
-        .catch(error => console.log(error.response));
+        .catch(error => {
+            console.log(error.response)
+            return <ApiError />;
+        });
     }
 }
 export default new CommentService();
