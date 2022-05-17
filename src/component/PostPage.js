@@ -22,7 +22,7 @@ const PostPage = () => {
     }
 
     const createComment = () => {
-        navigator('/post/' + params.id + '/comment')
+        navigator('/post/comment/'+ + params.id )
     }
 
     useEffect(() => { getComments(); }, [])

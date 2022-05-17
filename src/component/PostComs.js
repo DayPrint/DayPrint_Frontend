@@ -9,7 +9,6 @@ const PostComs = (data) => {
             <li>
                 <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>
                 <div class="com_text">
-
                     {data.data.author}   
                 </div>
             </li>

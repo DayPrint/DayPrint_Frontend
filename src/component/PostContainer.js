@@ -31,7 +31,7 @@ const PostContainer = (props) => {
                         </li>
                         <li class="postpage_des">
                         <div>
-                            {data.explanation}
+                            {data.content}
                         </div>
                         </li>
                     </ul>
