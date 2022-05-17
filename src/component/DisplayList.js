@@ -9,6 +9,7 @@ const DisplayPost = ({datum}) => {
     return <div key={datum.id}><a onClick={goToPost}>{datum.title}</a></div>;
 };
 const DisplayList=({data})=>{
+    console.log(data);
     return data.map((cur, index) => (<DisplayPost datum={cur} key={cur.id} />));
 }
 
