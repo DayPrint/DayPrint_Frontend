@@ -18,6 +18,11 @@ const LoginPage = () => {
 
   })
   const {username,phone,imagefile,id,passwd1,passwd2}=inputs;
+  const checkPasswd=e=>{
+    setInputs({
+      passwd2:e.target.value
+    });
+  }
   const onChange=e=>{
     setInputs({
       ...inputs,
