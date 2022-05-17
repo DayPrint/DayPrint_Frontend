@@ -26,7 +26,7 @@ const LoginPage = () => {
       console.log("fail");
     }
     else{
-      navigator("/");  
+      navigator("/");
     }
   }
 
