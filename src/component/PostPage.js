@@ -7,6 +7,11 @@ import PostContainer from './PostContainer';
 
 const PostPage = () => {
     const params = useParams();
+
+    const handleDelete = () => {
+
+    }
+
     return (
         <body>
             <Header />
