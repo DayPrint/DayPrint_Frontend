@@ -10,15 +10,30 @@ import postService from '../service/post.service';
 const PostPage = () => {
     const params = useParams();
     const navigator = useNavigate();
+    const [comments, setComments] = useState([]);
+    const [data, setData] = useState({
+        file:"",
+        title:"",
+        targetDate:"",
+        content:""
+    });
+
     const handleDelete = async () => {
         await postService.deletepost(params.id);
         navigator('/');
     }
-    const [comments, setComments] = useState([]);
+    
     const getComments = async () => {
         console.log(params.id);
         const response = await commentService.getComments(params.id);
         setComments(response);
+    }
+
+    const getData =async () => {
+        const response = await postService.getpostdetail(params.id);
+        setData(response);
+        console.log(response);
+        console.log("데이터 확인")
     }
 
     const createComment = () => {
@@ -28,7 +43,7 @@ const PostPage = () => {
     const handleEdit= () => {
         navigator('/edit/'+params.id)
     }
-    useEffect(() => { getComments(); }, [])
+    useEffect(() => { getComments(); getData(); }, [])
 
     return (
         <body>
@@ -42,21 +57,20 @@ const PostPage = () => {
                 </nav>
                 <div class="border1">
                     <div class="border2">
-                        <PostContainer value={params} />
+                        <PostContainer value={data} />
                         <div class="postpage_coms">
                             <nav>
                                 <div class="com_board">
                                     comment board
                                 </div>
                                 <ul class="com_container">
-                                    {comments.map(o => <PostComs data={o} key={o.id} />)}
-                                    <a onClick={createComment}>
-                                    <li>
+                                    {comments.map(o => <PostComs data={o} key={o.id} date={data.targetDate}/>)}
+                                    <a><button onClick={createComment}><li>
                                         <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>
                                         <div class="com_text">
                                             추가하기
                                         </div>
-                                    </li></a>
+                                    </li></button></a>
                                 </ul>                               
                             </nav>
                         </div>
