@@ -39,7 +39,7 @@ const LoginPage = () => {
           <div className="field">
             <label for="userName" class="hidden">Name</label>
             <i className="fas fa-user" />
-            <input type="text" name="email" placeholder="  아이디  or  이메일" onChange={onChange}/>
+            <input type="text" name="email" placeholder="  이메일" onChange={onChange}/>
           </div>
           <div className="field">
             <label for="userPass" class="hidden">password</label>
