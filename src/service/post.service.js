@@ -58,7 +58,8 @@ class PostService {
                 headers:{
                     Authorization:user.jwtToken
                 }
-            }).then((res)=>res.data).catch(e=>console.log(e));
+            }).then((res)=>{
+                return res.data;}).catch(e=>console.log(e));
         }
     }
 }

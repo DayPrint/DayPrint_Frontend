@@ -1,9 +1,10 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React,{useState,useEffect } from 'react';
+import { useParams} from 'react-router-dom';
 import '../style/postpage.css';
 import Header from './Header';
 import PostComs from './PostComs';
 import PostContainer from './PostContainer';
+import postService from '../service/post.service';
 
 const PostPage = () => {
     const params = useParams();
@@ -20,7 +21,7 @@ const PostPage = () => {
                 </nav>
                 <div class="border1">
                     <div class="border2">
-                        <PostContainer id={params}/>
+                        <PostContainer value={params}/>
                         <div class="postpage_coms">
                             <nav>
                                 <div class="com_board">
