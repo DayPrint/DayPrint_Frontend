@@ -2,6 +2,7 @@ import './App.css';
 import { MainPage, LoginPage, PostPage, Comment, AddPostPage } from './component';
 import { Route, Routes } from 'react-router-dom';
 import SignUp from './component/SignUp';
+import AddComs from './component/AddComs';
 import './style/styles.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/post/comment" element={<Comment />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add" element={<AddPostPage />} />
+        <Route path="/addcoms" element={<AddComs />} />
       </Routes>
     </div>
   );
