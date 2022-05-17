@@ -10,27 +10,7 @@ import '../index.css';
 
 
 const MainPage = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState();
-
-
-  const fetchData = async () => {
-    try {
-
-      const response = await postService.getpost();
-
-      console.log("<= response => ");
-      console.log(response);
-      response.map(o => console.log(o));
-      
-      console.log(" <= data => ");
-      setData(response);
-      console.log(data.length);
-    } catch (e) {
-      setError(e);
-    }
-  }
-  useEffect(() => { fetchData(); }, []);
+  
   
     
   return (

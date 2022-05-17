@@ -3,10 +3,12 @@ import '../style/postpage.css';
 import Header from './Header';
 import PostComs from './PostComs';
 import PostContainer from './PostContainer';
+import Context from '../Context'
 
-const PostPage = () => {
+const PostPage = ({data}) => {
 
   return (
+      <Context.Provider value={data}>
     <body>
         <Header />
         <main>
@@ -38,6 +40,7 @@ const PostPage = () => {
       </footer>
   
   </body>
+  </Context.Provider>
   )
 }
 
