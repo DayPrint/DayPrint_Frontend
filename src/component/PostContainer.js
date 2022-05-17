@@ -12,7 +12,7 @@ const PostContainer = (props) => {
         content:""
     });
     const getData =async () => {
-        const response = await postService.getpostdetail(props.id.id);
+        const response = await postService.getpostdetail(props.value.id);
         setData(response);
         console.log(response);
         console.log("데이터 확인")

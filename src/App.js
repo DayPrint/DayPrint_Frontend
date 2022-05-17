@@ -12,10 +12,9 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/post/:id" element={<PostPage />} />
-        <Route path="/post/comment" element={<Comment />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add" element={<AddPostPage />} />
-        <Route path="/addcoms" element={<AddComs />} />
+        <Route path="/post/:id/comment" element={<AddComs />} />
       </Routes>
     </div>
   );

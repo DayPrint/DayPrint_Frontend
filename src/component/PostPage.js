@@ -9,13 +9,25 @@ import DisplayList from './DisplayList';
 
 const PostPage = () => {
     const params = useParams();
-    const [comments,setComments]=useState([{}]);
+    const [comments,setComments]=useState([{
+        author:'',
+        text:'',
+        postId:null,
+        postTitle:''
+    }]);
     const getComments=async()=>{
         console.log(params.id);
         const response=await commentService.getComments(params.id);
+        console.log(response);
         setComments(response);
+        console.log(comments);
     }
     useEffect(()=>{ getComments();},[])
+
+
+    const handleDelete = () => {
+
+    }
     return (
         <body>
             <Header />
