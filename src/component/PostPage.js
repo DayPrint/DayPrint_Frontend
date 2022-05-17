@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../style/postpage.css';
 import Header from './Header';
@@ -10,17 +10,22 @@ import postService from '../service/post.service';
 const PostPage = () => {
     const params = useParams();
     const navigator = useNavigate();
-    const handleDelete = async() => {
+    const handleDelete = async () => {
         await postService.deletepost(params.id);
         navigator('/');
     }
-    const [comments,setComments]=useState([]);
-    const getComments=async()=>{
+    const [comments, setComments] = useState([]);
+    const getComments = async () => {
         console.log(params.id);
-        const response=await commentService.getComments(params.id);
+        const response = await commentService.getComments(params.id);
         setComments(response);
     }
-    useEffect(()=>{ getComments();},[])
+
+    const createComment = () => {
+        navigator('/post/' + params.id + '/comment')
+    }
+
+    useEffect(() => { getComments(); }, [])
 
     return (
         <body>
@@ -34,15 +39,22 @@ const PostPage = () => {
                 </nav>
                 <div class="border1">
                     <div class="border2">
-                        <PostContainer id={params}/>
+                        <PostContainer id={params} />
                         <div class="postpage_coms">
                             <nav>
                                 <div class="com_board">
                                     comment board
                                 </div>
                                 <ul class="com_container">
-                                    {comments.map( o => <PostComs data={o} key={o.id}/>)}
-                                </ul>
+                                    {comments.map(o => <PostComs data={o} key={o.id} />)}
+                                    <a onClick={createComment}>
+                                    <li>
+                                        <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>
+                                        <div class="com_text">
+                                            추가하기
+                                        </div>
+                                    </li></a>
+                                </ul>                               
                             </nav>
                         </div>
                     </div>
