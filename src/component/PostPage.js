@@ -12,6 +12,12 @@ const PostPage = ({data}) => {
     <body>
         <Header />
         <main>
+            <nav class="postmenu">
+                <ul class="pm_list">
+                    <a href=''><li class="pm_edit link">수정</li></a>
+                    <a href=''><li class="pm_del link">삭제</li></a>
+                </ul>
+            </nav>
             <div class="border1">
                 <div class="border2">
                     <PostContainer />
