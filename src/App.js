@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/post" element={<PostPage />} />
+        <Route path="/post/:id" element={<PostPage />} />
         <Route path="/post/comment" element={<Comment />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add" element={<AddPostPage />} />

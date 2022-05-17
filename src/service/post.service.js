@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 
-const API_URL = "http://3.36.98.223:8080/api/post/";
+const API_URL = "http://3.36.98.223:8080/";
 
 class PostService {
 
@@ -20,7 +20,7 @@ class PostService {
             }
             return axios({
                 method: 'post',
-                url: API_URL + user.id,
+                url: API_URL + "api/post/"+user.id,
                 headers: {
                     Authorization: user.jwtToken
                 },
@@ -37,7 +37,7 @@ class PostService {
             console.log("user exists")
             return axios({
                 method: 'get',
-                url: API_URL + user.id,
+                url: API_URL +"api/post/"+ user.id,
                 headers: {
                     Authorization: user.jwtToken
                 }
@@ -47,6 +47,18 @@ class PostService {
                 return res.data;
             })
             .catch(error => console.log(error));
+        }
+    }
+    getpostdetail(postID){
+        const user = JSON.parse(localStorage.getItem('user'));
+        if(user&&user.jwtToken){
+            return axios({
+                method:'get',
+                url:API_URL+"api/postdetail/"+postID,
+                headers:{
+                    Authorization:user.jwtToken
+                }
+            }).then((res)=>res.data).catch(e=>console.log(e));
         }
     }
 }
