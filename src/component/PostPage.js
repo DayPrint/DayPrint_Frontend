@@ -8,7 +8,6 @@ import postService from '../service/post.service';
 
 const PostPage = () => {
     const params = useParams();
-    
     return (
         <body>
             <Header />
@@ -45,7 +44,6 @@ const PostPage = () => {
             </main>
             <footer>
             </footer>
-
         </body>
     )
 }

@@ -1,5 +1,4 @@
 import axios from "axios";
-import React, { useState } from "react";
 
 
 const API_URL = "http://3.36.98.223:8080/";
@@ -49,6 +48,8 @@ class PostService {
             .catch(error => console.log(error));
         }
     }
+
+
     getpostdetail(postID){
         const user = JSON.parse(localStorage.getItem('user'));
         if(user&&user.jwtToken){
@@ -60,6 +61,24 @@ class PostService {
                 }
             }).then((res)=>{
                 return res.data;}).catch(e=>console.log(e));
+        }
+    }
+
+    deletepost(postId) {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.jwtToken) {
+            console.log("user exists")
+            return axios({
+                method: 'delete',
+                url: API_URL + "api/postdetail/" + postId,
+                headers: {
+                    Authorization: user.jwtToken
+                }
+            }).then((res) =>{
+                console.log(res.data);
+                return res.data;
+            })
+            .catch(error => console.log(error));
         }
     }
 }

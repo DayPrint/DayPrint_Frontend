@@ -4,29 +4,21 @@ import postService from '../service/post.service';
 import '../style/postpage.css';
 //import useAsync from 'react-async'
 
-const PostContainer = ({value}) => {
+const PostContainer = (props) => {
     const [data, setData] = useState({
-        targetDate:"",
+        file:"",
         title:"",
+        targetDate:"",
         content:""
     });
-    const [error,setError]=useState();
-    const getData = async () => {
-        try {
-            const response = await postService.getpostdetail(value.id);
-            console.log(response);
-            setData(response);
-        } catch (e) {
-            setError(e);
-        }
+    const getData =async () => {
+        const response = await postService.getpostdetail(props.id.id);
+        setData(response);
+        console.log(response);
+        console.log("데이터 확인")
     }
     useEffect(() => { getData(); }, []);
-    // const { postdata, error, isLoading } = useAync({
-    //     promiseFn: getData
-    // })
-    // if (isLoading) return "Loading"
-    // if (error) return "error occured"
-    // if (data)
+
     return (
         <div>
             <h2>{data.targetDate}</h2>
@@ -38,7 +30,8 @@ const PostContainer = ({value}) => {
                             {data.title}
                         </li>
                         <li class="postpage_des">
-                            <p>{data.content}</p>
+
+                        <p>{data.explanation}</p>
                         </li>
                     </ul>
                 </nav>
