@@ -5,19 +5,21 @@ import Header from './Header.js'
 import PostService from '../service/post.service';
 import FooterLogo from './FooterLogo';
 import '../style/css/button.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useRef } from 'react';
 
-const AddPostPage = () => {
+const EditPostPage = () => {
     const navigator = useNavigate();
+    const params = useParams();
 
     const [imgurl, setImgurl] = useState(""); 
     const imgRef = useRef();
     const [inputs, setInputs]=useState({
-        file:"/",
+        file:"",
         title:"",
         date:"",
-        explanation:""
+        text:"",
+        postId:params.id
       })
     const onChange=e=>{
         setInputs({
@@ -25,9 +27,9 @@ const AddPostPage = () => {
         [e.target.name]:e.target.value
         });
     };
-    const post= async (e)=>{
+    const edit= async (e)=>{
         e.preventDefault();
-        await PostService.addpost(inputs);
+        await PostService.updatePost(inputs);
         console.log(inputs);
         return navigator("/");
     };
@@ -58,7 +60,7 @@ const AddPostPage = () => {
         <div id="addpost">
       <Header />
       <div className="content">
-        <form autoComplete="off" action="" method="POST" class="" onSubmit={post}>
+        <form autoComplete="off" action="" method="POST" class="" onSubmit={edit}>
             <div className="field">
                 <input type="file" id="file" placeholder='파일 찾아서 업로드' accept='image/*' ref={imgRef} onChange={onLoadFile}></input>
                 <label for="upload">기념일 사진 찾기</label>
@@ -75,7 +77,7 @@ const AddPostPage = () => {
                 <label for="explanation" class="fieldtext">설명</label>
                 <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='  기념일의 설명' />
             </div>
-          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 작성하기</button>
+          <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 수정하기</button>
         </form>
       </div>
       <img src={inputs.file}></img>
@@ -84,4 +86,4 @@ const AddPostPage = () => {
     );
 };
 
-export default AddPostPage;
+export default EditPostPage;

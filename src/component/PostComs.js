@@ -5,22 +5,41 @@ import Swal from 'sweetalert2';
 
 const PostComs = (data) => {
     console.log(data);
-    const alarm=()=>{
-        alert("작성자 : "+data.data.author+"\n메시지 : "+data.data.text);
+
+    const Toast = Swal.mixin({
+        toast:true,
+        position:'center-center',
+        showConfirmButton:false,
+        timer:3000,
+        timerProgressBar:true,
+        
+        didOpen: (toast) =>{
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
+    const alarm= async ()=>{
+        await Toast.fire({
+            icon:'success',
+            title:"작성자 : "+data.data.author+"\n메시지 : "+data.data.text 
+        })
+        // alert("작성자 : "+data.data.author+"\n메시지 : "+data.data.text);
         // Swal.fire({
         //     title:"작성자 : " + data.data.author,
         //     text:"메시지 : "+ data.data.text,
         //     icon:"info"
         // })
+        return false;
     }    
     return (
-        <a href="" >
-            <li onClick={alarm}>
+        <a>
+            <button onClick={alarm}>
                 <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>
                 <div class="com_text">
                     {data.data.author}   
                 </div>
-            </li>
+            </button>
         </a>
     )
 }

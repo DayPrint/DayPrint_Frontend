@@ -22,9 +22,12 @@ const PostPage = () => {
     }
 
     const createComment = () => {
-        navigator('/post/comment/'+ + params.id )
+        navigator('/post/comment/' + params.id )
     }
 
+    const handleEdit= () => {
+        navigator('/edit/'+params.id)
+    }
     useEffect(() => { getComments(); }, [])
 
     return (
@@ -33,7 +36,7 @@ const PostPage = () => {
             <main>
                 <nav class="postmenu">
                     <ul class="pm_list">
-                        <a href=''><li class="pm_edit link">수정</li></a>
+                        <button onClick={handleEdit}><li class="pm_edit link">수정</li></button>
                         <button onClick={handleDelete}><li class="pm_del link">삭제</li></button>
                     </ul>
                 </nav>
