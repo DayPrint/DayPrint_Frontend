@@ -52,8 +52,8 @@ const LoginPage = () => {
           </div>
           <div className="field">
             <label for="phone" class="hidden">PhoneNumber</label>
-            <i className="fas fa-user" />
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" onChange={onChange} placeholder="  연락처" />
+            <i className="fas fa-phone" />
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" onChange={onChange} placeholder="  연락처 (000-0000-0000)" />
           </div>
           <div className="field">
             <label for="userEmail" class="hidden">email</label>
