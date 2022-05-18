@@ -1,4 +1,4 @@
-import React,{ useState ,useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import '../style/css/imageupload.css';
 import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
@@ -8,34 +8,46 @@ import FooterLogo from './FooterLogo';
 
 const LoginPage = () => {
   const navigator = useNavigate();
-  const [inputs, setInputs]=useState({
-    username:"",
-    phone:"",
-    imagefile:"",
-    id:"",
-    passwd1:"",
-    passwd2:""
+  const [inputs, setInputs] = useState({
+    username: "",
+    phone: "",
+    imagefile: "",
+    id: "",
+    passwd1: "",
+    passwd2: ""
 
   })
-  const {username,phone,imagefile,id,passwd1,passwd2}=inputs;
-  const checkPasswd=e=>{
-    setInputs({
-      passwd2:e.target.value
-    });
+  const [passwdCheck, setpasswdCheck] = useState(true);
+  const { username, phone, imagefile, id, passwd1, passwd2 } = inputs;
+  const checkPasswd = e => {
+    
+    if (e.target.value != inputs.passwd1) {
+      setpasswdCheck(true);
+      setInputs({
+        ...inputs,
+        passwd2:e.target.value
+      });
+    } else {
+      setpasswdCheck(false);
+      setInputs({
+        passwd2: e.target.value
+      });
+    }
   }
-  const onChange=e=>{
+  const onChange = e => {
     setInputs({
       ...inputs,
-      [e.target.name]:e.target.value
+      [e.target.name]: e.target.value
     });
+    console.log(inputs);
   };
-  const myRef=useRef(null);
-  const file=useRef(null);
-  const getFilePath=()=>{
-    myRef.current.placeholder=file.current.value;
-    inputs[imagefile]=file.current.value;
+  const myRef = useRef(null);
+  const file = useRef(null);
+  const getFilePath = () => {
+    myRef.current.placeholder = file.current.value;
+    inputs[imagefile] = file.current.value;
   }
-  const register= async (e)=>{
+  const register = async (e) => {
     e.preventDefault();
     await AuthService.register(inputs);
     navigator("/login");
@@ -47,8 +59,8 @@ const LoginPage = () => {
         <h2 class="banner-tt"><a href="/">DayPrint </a>회원가입</h2>
         <form autoComplete="off" onSubmit={register} class="sign_up_form">
           <div className="field">
-                <label for="upload">대표이미지 선택하기</label>
-                <input type="file" id="uploadfile" placeholder='파일 찾아서 업로드'></input>
+            <label for="upload">대표이미지 선택하기</label>
+            <input type="file" id="uploadfile" placeholder='파일 찾아서 업로드'></input>
           </div>
           <div className="field">
             <label for="userName" class="hidden">Name</label>
@@ -68,19 +80,17 @@ const LoginPage = () => {
           <div className="field">
             <label for="userPass" class="hidden">password</label>
             <i className="fas fa-lock" />
-            <input type="password" id="userPass" name="passwd1" onChange={onChange} placeholder="  비밀번호" required/>
+            <input type="password" id="userPass" name="passwd1" onChange={onChange} placeholder="  비밀번호" required />
           </div>
           <div className="field">
             <label for="userPass" class="hidden">password</label>
             <i className="fas fa-lock" />
-            <input type="password" id="passConfirm" name="passwd2" onChange={onChange} placeholder="  비밀번호 확인" />
+            <input type="password" id="passConfirm" name="passwd2" onChange={checkPasswd} placeholder="  비밀번호 확인" />
+            
           </div>
-          {/* <div class="filebox">
-                    <label for="file"><img src={img} /></label>
-                    <input class="upload-name"  ref={myRef}  />
-                    <input type="file" id="file" name="imagefile" onChange={getFilePath} ref={file} />
-                </div> */}
-          <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={()=>console.log(inputs)} />
+          {passwdCheck&&(<h3>패스워드가 같지 않습니다.</h3>)}
+      
+          <input type="submit" className="field" value="DayPrint 계정 만들기" onClick={() => console.log(inputs)} />
         </form>
         <div class="sign_up_container">
           <div class="sign_up_link">
@@ -89,7 +99,7 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      <FooterLogo/>
+      <FooterLogo />
     </div>
   )
 }
