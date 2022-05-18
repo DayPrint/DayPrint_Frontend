@@ -1,5 +1,5 @@
 import './App.css';
-import { MainPage, LoginPage, PostPage, Comment, AddPostPage } from './component';
+import { MainPage, LoginPage, PostPage, AddPostPage } from './component';
 import { Route, Routes } from 'react-router-dom';
 import SignUp from './component/SignUp';
 import AddComs from './component/AddComs';

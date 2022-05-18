@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const DisplayPost = ({datum}) => {
@@ -6,6 +6,7 @@ const DisplayPost = ({datum}) => {
     const goToPost=()=>{
         navigator("/post/"+datum.id);
     }
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     return <div key={datum.id}><a onClick={goToPost}>{datum.title}</a></div>;
 };
 const DisplayList=({data})=>{

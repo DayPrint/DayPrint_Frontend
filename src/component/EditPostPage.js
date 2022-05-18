@@ -6,14 +6,12 @@ import PostService from '../service/post.service';
 import FooterLogo from './FooterLogo';
 import '../style/css/button.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useRef } from 'react';
 
 const EditPostPage = () => {
     const navigator = useNavigate();
     const params = useParams();
 
-    const [imgurl, setImgurl] = useState(""); 
-    const imgRef = useRef();
+    // const imgRef = useRef();
     const [inputs, setInputs]=useState({
         file:"",
         title:"",
@@ -34,27 +32,27 @@ const EditPostPage = () => {
         return navigator("/");
     };
 
-    const onLoadFile= (e)=>{
-        const reader = new FileReader();
-        const file = e.target.files[0];
-        console.log(file);
+    // const onLoadFile= (e)=>{
+    //     const reader = new FileReader();
+    //     const file = e.target.files[0];
+    //     console.log(file);
 
-        console.log(reader.readAsDataURL(file));
-        reader.onloadend = () => {
-            setImgurl(reader.result);
-            console.log("이미지 주소"+reader.result);
-            setInputs({
-                ...inputs,
-                file:imgurl
-            });
-            console.log(reader);
-            console.log(inputs);
+    //     console.log(reader.readAsDataURL(file));
+    //     reader.onloadend = () => {
+    //         setImgurl(reader.result);
+    //         console.log("이미지 주소"+reader.result);
+    //         setInputs({
+    //             ...inputs,
+    //             file:imgurl
+    //         });
+    //         console.log(reader);
+    //         console.log(inputs);
 
-            const formData = new FormData();
-            formData.append('file',reader);
-            for(const keyvalue of formData) console.log(keyvalue);
-        };
-    };
+    //         const formData = new FormData();
+    //         formData.append('file',reader);
+    //         for(const keyvalue of formData) console.log(keyvalue);
+    //     };
+    // };
     
     return (
         <div id="addpost">
@@ -80,7 +78,7 @@ const EditPostPage = () => {
           <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 수정하기</button>
         </form>
       </div>
-      <img src={inputs.file}></img>
+      {/* <img src={inputs.file}></img> */}
       <FooterLogo/>
     </div>
     );

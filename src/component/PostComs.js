@@ -50,6 +50,7 @@ const PostComs = (data) => {
         return false;
     }
     return (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a>
             <button onClick={alarm}>
                 <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>

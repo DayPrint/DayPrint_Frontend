@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../style/css/imageupload.css';
-import img from '../style/images/file-image-solid.svg'
 import '../style/styles.css';
 import AuthService from '../service/auth.service';
 import { useNavigate } from 'react-router-dom';
@@ -18,10 +17,10 @@ const LoginPage = () => {
 
   })
   const [passwdCheck, setpasswdCheck] = useState(false);
-  const { username, phone, imagefile, id, passwd1, passwd2 } = inputs;
+  // const { username, phone, imagefile, id, passwd1, passwd2 } = inputs;
   const checkPasswd = e => {
     
-    if (e.target.value != inputs.passwd1) {
+    if (e.target.value !== inputs.passwd1) {
       setpasswdCheck(true);
       setInputs({
         ...inputs,
@@ -42,12 +41,12 @@ const LoginPage = () => {
     });
     console.log(inputs);
   };
-  const myRef = useRef(null);
-  const file = useRef(null);
-  const getFilePath = () => {
-    myRef.current.placeholder = file.current.value;
-    inputs[imagefile] = file.current.value;
-  }
+  // const myRef = useRef(null);
+  // const file = useRef(null);
+  // const getFilePath = () => {
+  //   myRef.current.placeholder = file.current.value;
+  //   inputs[imagefile] = file.current.value;
+  // }
   const register = async (e) => {
     e.preventDefault();
     console.log(inputs)
