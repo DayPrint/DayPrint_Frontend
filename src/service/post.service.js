@@ -19,17 +19,17 @@ class PostService {
             }
             return axios({
                 method: 'post',
-                url: API_URL + "api/post/"+user.id,
+                url: API_URL + "api/post/" + user.id,
                 headers: {
                     Authorization: user.jwtToken
                 },
                 data: data,
             })
-            .then((res) => console.log(res))
-            .catch(error => {
-                console.log(error.response)
-                return <ApiError />;
-            });
+                .then((res) => console.log(res))
+                .catch(error => {
+                    console.log(error.response)
+                    return <ApiError />;
+                });
         } else {
             console.log('no user login plz');
             return <ApiError />
@@ -42,46 +42,37 @@ class PostService {
             console.log("user exists")
             return axios({
                 method: 'get',
-                url: API_URL +"api/post/"+ user.id,
+                url: API_URL + "api/post/" + user.id,
                 headers: {
                     Authorization: user.jwtToken
                 }
 
             })
-            .then((res) =>{
-                console.log(res.data);
-                return res.data;
-            })
-            .catch(error => {
-                console.log(error)
-                return <ApiError />;
-            });
+                .then((res) => {
+                    console.log(res.data);
+                    return res.data;
+                })
+                .catch(error => {
+                    console.log(error)
+                    return <ApiError />;
+                });
         }
-        else{
+        else {
             return <ApiError />;
         }
     }
 
 
-    getpostdetail(postID){
-        const user = JSON.parse(localStorage.getItem('user'));
-        if(user&&user.jwtToken){
-            return axios({
-                method:'get',
-                url:API_URL+"api/postdetail/"+postID,
-                headers:{
-                    Authorization:user.jwtToken
-                }
-            })
-            .then((res)=>{return res.data;})
-            .catch(e=>{
+    getpostdetail(postID) {
+        return axios({
+            method: 'get',
+            url: API_URL + "api/postdetail/" + postID,
+        })
+            .then((res) => { return res.data; })
+            .catch(e => {
                 console.log(e)
                 return <ApiError />;
             });
-        }
-        else{
-            return <ApiError />;
-        }
     }
 
     deletepost(postId) {
@@ -95,21 +86,21 @@ class PostService {
                     Authorization: user.jwtToken
                 }
             })
-            .then((res) =>{
-                console.log(res.data);
-                return res.data;
-            })
-            .catch(error => {
-                console.log(error);
-                return <ApiError />;
-            });
+                .then((res) => {
+                    console.log(res.data);
+                    return res.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                    return <ApiError />;
+                });
         }
         else {
             return <ApiError />;
         }
     }
 
-    updatePost(inputs){
+    updatePost(inputs) {
         const user = JSON.parse(localStorage.getItem('user'));
         if (user && user.jwtToken) {
             console.log(user.jwtToken);
@@ -123,14 +114,14 @@ class PostService {
             }
             return axios({
                 method: 'put',
-                url: API_URL + "api/postdetail/"+inputs.postId,
+                url: API_URL + "api/postdetail/" + inputs.postId,
                 headers: {
                     Authorization: user.jwtToken
                 },
                 data: data,
             })
-            .then((res) => console.log(res))
-            .catch(error => console.log(error.response));
+                .then((res) => console.log(res))
+                .catch(error => console.log(error.response));
         } else {
             console.log('no user login plz');
             return <ApiError />;
