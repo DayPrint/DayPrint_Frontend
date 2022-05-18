@@ -83,12 +83,18 @@ body{
     position: relative;
     overflow: hidden;
 }
+.field_des textarea{   
+    width: 250px;
+    height: 100px;
+    transform: translate(13px, 13px);
+    resize: none;
+}
 #addpost .field .fa-file-image{
     background: url(../images/file-image-solid.svg) no-repeat;
     vertical-align: middle;
 }
 #addpost .field:nth-child(4){
-    height: 150px;
+    height: 100px;
 }
 #addpost .field:nth-child(4) #explanation{
     top: 0;
