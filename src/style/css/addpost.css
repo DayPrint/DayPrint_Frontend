@@ -95,18 +95,16 @@ body{
     font-size: 30px;
     line-height: 30px;
 }
-#addpost .field:nth-child(1) input{
-    font-size: 18px;
-    margin-left: 116px;
-    width: 200px;
-}
 #addpost .field:nth-child(1) label{
     font-size: 27px;
 }
 .field .fieldtext{
     font-size: 30px;
-    width: 100px;   
+     
 }
+/* .field field_des{
+    height:100px;
+} */
 
 #addpost .field input:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color:#A8A8A8;

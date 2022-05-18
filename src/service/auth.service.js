@@ -27,14 +27,16 @@ class AuthService {
   }
 
   register(inputs) {
-    return axios.post(API_URL + "join", {
+    const data={
       email:inputs.id,
     //   imageUrl,
       name:inputs.username,
       password:inputs.passwd1,
       phone:inputs.phone
-    }).then((res)=>console.log(res))
-    .catch(e => console.log(e));
+    }
+    console.log(data);
+    return axios.post(API_URL+'join',data).then((res)=>console.log(res))
+    .catch(e=><ApiError/>);
   }
 
   getCurrentUser() {
