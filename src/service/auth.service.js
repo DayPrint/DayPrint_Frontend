@@ -1,8 +1,7 @@
 import axios from "axios";
 import ApiError from "../component/ApiError";
 
-//const API_URL = "http://3.36.98.223:8080/";
-const API_URL="http://localhost:8080/"
+const API_URL = "http://3.36.98.223:8080/";
 
 class AuthService {
   login(username, password) {
@@ -28,14 +27,16 @@ class AuthService {
   }
 
   register(inputs) {
-    return axios.post(API_URL + "join", {
+    const data={
       email:inputs.id,
     //   imageUrl,
       name:inputs.username,
       password:inputs.passwd1,
       phone:inputs.phone
-    }).then((res)=>console.log(res))
-    .catch(e => console.log(e));
+    }
+    console.log(data);
+    return axios.post(API_URL+'join',data).then((res)=>console.log(res))
+    .catch(e=><ApiError/>);
   }
 
   getCurrentUser() {

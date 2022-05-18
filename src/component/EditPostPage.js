@@ -61,10 +61,10 @@ const EditPostPage = () => {
       <Header />
       <div className="content">
         <form autoComplete="off" action="" method="POST" class="" onSubmit={edit}>
-            <div className="field">
+            {/* <div className="field">
                 <input type="file" id="file" placeholder='파일 찾아서 업로드' accept='image/*' ref={imgRef} onChange={onLoadFile}></input>
                 <label for="upload">기념일 사진 찾기</label>
-            </div>
+            </div> */}
             <div className="field">
                 <label for="title" class="fieldtext">나의 기념일</label>
                 <input type="text" id='title' name="title" onChange={onChange} placeholder="  제목" />
@@ -75,7 +75,7 @@ const EditPostPage = () => {
             </div>
             <div className="field field_des">
                 <label for="explanation" class="fieldtext">설명</label>
-                <input type="postContent" id='explanation' name="explanation" onChange={onChange} placeholder='  기념일의 설명' />
+                <textarea id='explanation' name="explanation" onChange={onChange} placeholder='  기념일의 설명' />
             </div>
           <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 수정하기</button>
         </form>

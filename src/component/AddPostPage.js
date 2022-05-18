@@ -59,10 +59,7 @@ const AddPostPage = () => {
       <Header />
       <div className="content">
         <form autoComplete="off" action="" method="POST" class="" onSubmit={post}>
-            <div className="field">
-                <input type="file" id="file" placeholder='파일 찾아서 업로드' accept='image/*' ref={imgRef} onChange={onLoadFile}></input>
-                <label for="upload">기념일 사진 찾기</label>
-            </div>
+            
             <div className="field">
                 <label for="title" class="fieldtext">나의 기념일</label>
                 <input type="text" id='title' name="title" onChange={onChange} placeholder="  제목" />
