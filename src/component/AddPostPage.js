@@ -6,13 +6,11 @@ import PostService from '../service/post.service';
 import FooterLogo from './FooterLogo';
 import '../style/css/button.css';
 import { useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
 
 const AddPostPage = () => {
     const navigator = useNavigate();
 
-    const [imgurl, setImgurl] = useState(""); 
-    const imgRef = useRef();
+    // const imgRef = useRef();
     const [inputs, setInputs]=useState({
         file:"/",
         title:"",
@@ -32,37 +30,34 @@ const AddPostPage = () => {
         return navigator("/");
     };
 
-    const onLoadFile= (e)=>{
-        const reader = new FileReader();
-        const file = e.target.files[0];
-        console.log(file);
+    // const onLoadFile= (e)=>{
+    //     const reader = new FileReader();
+    //     const file = e.target.files[0];
+    //     console.log(file);
 
-        console.log(reader.readAsDataURL(file));
-        reader.onloadend = () => {
-            setImgurl(reader.result);
-            console.log("이미지 주소"+reader.result);
-            setInputs({
-                ...inputs,
-                file:imgurl
-            });
-            console.log(reader);
-            console.log(inputs);
+    //     console.log(reader.readAsDataURL(file));
+    //     reader.onloadend = () => {
+    //         setImgurl(reader.result);
+    //         console.log("이미지 주소"+reader.result);
+    //         setInputs({
+    //             ...inputs,
+    //             file:imgurl
+    //         });
+    //         console.log(reader);
+    //         console.log(inputs);
 
-            const formData = new FormData();
-            formData.append('file',reader);
-            for(const keyvalue of formData) console.log(keyvalue);
-        };
-    };
+    //         const formData = new FormData();
+    //         formData.append('file',reader);
+    //         for(const keyvalue of formData) console.log(keyvalue);
+    //     };
+    // };
     
     return (
         <div id="addpost">
       <Header />
       <div className="content">
         <form autoComplete="off" action="" method="POST" class="" onSubmit={post}>
-            <div className="field">
-                <input type="file" id="file" placeholder='파일 찾아서 업로드' accept='image/*' ref={imgRef} onChange={onLoadFile}></input>
-                <label for="upload">기념일 사진 찾기</label>
-            </div>
+            
             <div className="field">
                 <label for="title" class="fieldtext">나의 기념일</label>
                 <input type="text" id='title' name="title" onChange={onChange} placeholder="  제목" />
@@ -78,7 +73,7 @@ const AddPostPage = () => {
           <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 작성하기</button>
         </form>
       </div>
-      <img src={inputs.file}></img>
+      {/* <img src={inputs.file}></img> */}
       <FooterLogo/>
     </div>
     );

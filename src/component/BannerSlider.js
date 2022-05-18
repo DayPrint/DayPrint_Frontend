@@ -62,7 +62,7 @@ const BannerSlider = () => {
       >
         {anniversaryList.map(({ name, url }) => (
           <SwiperSlide>
-            <a href={url} target="_blank">{name}</a>
+            <a href={url} target="_blank" rel="noreferrer">{name}</a>
           </SwiperSlide>
         ))}
       </Swiper>

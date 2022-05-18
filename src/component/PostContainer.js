@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import postService from '../service/post.service';
 import '../style/postpage.css';
 //import useAsync from 'react-async'
 

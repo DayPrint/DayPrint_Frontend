@@ -1,12 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import '../style/styles.css';
 import DisplayList from './DisplayList';
 import React,{useState,useEffect} from 'react';
 import postService from '../service/post.service';
 
 const MainMyWorkplace = () => {
-    const [data, setData] = useState([]);
-  const [error, setError] = useState();
-
+  const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -21,7 +20,7 @@ const MainMyWorkplace = () => {
       setData(response);
       console.log(data.length);
     } catch (e) {
-      setError(e);
+      console.log(e);
     }
   }
   useEffect(() => { fetchData(); }, []);

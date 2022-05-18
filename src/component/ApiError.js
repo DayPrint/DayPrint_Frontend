@@ -6,7 +6,9 @@ const ApiError= () => {
     const navigator = useNavigate();
     authService.logout();
     navigator("/login");
-    return;
+    return (
+        <div>error.</div>
+    );
 }
 
 export default ApiError
