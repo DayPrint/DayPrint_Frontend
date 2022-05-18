@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../style/postpage.css';
 import Swal from 'sweetalert2';
 

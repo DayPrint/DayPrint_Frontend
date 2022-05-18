@@ -1,10 +1,8 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import ApiError from "../component/ApiError";
 
 
 const API_URL = "http://3.36.98.223:8080/";
-const navigator = useNavigate;
 
 class PostService {
     addpost(inputs) {
