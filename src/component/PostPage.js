@@ -77,21 +77,21 @@ const PostPage = () => {
                 <div class="border1">
                     <div class="border2">
                         <PostContainer value={data} />
-                        <button onClick={linkCopy}>링크 복사하기</button>
+                        <div class="linkcopy"><button class="link2" onClick={linkCopy}>링크 복사하기</button></div>
                         <div class="postpage_coms">
                             <nav>
                                 <div class="com_board">
                                     comment board
                                 </div>
-                                <ul class="com_container">
-                                    {comments.map(o => <PostComs data={o} key={o.id} date={data.targetDate} />)}
-                                    <a><button onClick={createComment}><li>
-                                        <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>
-                                        <div class="com_text">
-                                            추가하기
-                                        </div>
-                                    </li></button></a>
-                                </ul>
+                                    <ul class="com_container">
+                                        {comments.map(o => <PostComs data={o} key={o.id} date={data.targetDate} />)}
+                                        <a><button onClick={createComment}><li>
+                                            <p class="com_bullet"><i class="fa-solid fa-thumbtack"></i>0</p>
+                                            <div class="com_text">
+                                                추가하기
+                                            </div>
+                                        </li></button></a>
+                                    </ul>
                             </nav>
                         </div>
                     </div>
