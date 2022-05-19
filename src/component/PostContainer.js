@@ -16,9 +16,9 @@ const PostContainer = (props) => {
                             {props.value.title}
                         </li>
                         <li class="postpage_des">
-                        <div>
+                        <p>
                             {props.value.content}
-                        </div>
+                        </p>
                         </li>
                     </ul>
                 </nav>

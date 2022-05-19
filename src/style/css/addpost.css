@@ -47,13 +47,13 @@ body{
 #addpost .field input{
     position: absolute;
     top: 25%;
-    height: 50%;
+    height: 32px;
     padding:0;
     padding-left: 5px;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 28px;
     /* left: 0; */
-    /* width: 100%; */
+    width: 228px;
 }
 
 .field input::placeholder {
@@ -85,16 +85,19 @@ body{
 }
 .field_des textarea{   
     width: 250px;
-    height: 100px;
+    height: 54px;
     transform: translate(13px, 13px);
     resize: none;
+    font-size: 30px;
+    line-height: 30px;
+    color:black;
 }
 #addpost .field .fa-file-image{
     background: url(../images/file-image-solid.svg) no-repeat;
     vertical-align: middle;
 }
 #addpost .field:nth-child(4){
-    height: 100px;
+    height: 54px;
 }
 #addpost .field:nth-child(4) #explanation{
     top: 0;
