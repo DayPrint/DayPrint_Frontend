@@ -73,7 +73,7 @@ const EditPostPage = () => {
             </div>
             <div className="field field_des">
                 <label for="explanation" class="fieldtext">설명</label>
-                <textarea type="postContent" id='explanation' name="explanation" onChange={onChange} maxlength="20" placeholder='  기념일의 설명 (최대 15글자)' />
+                <textarea type="postContent" id='explanation' name="explanation" onChange={onChange} maxlength="15" placeholder='  기념일의 설명 (최대 15글자)' />
             </div>
           <button type="submit" className="field addpostpost" value="DayPrint 계정 만들기" onChange={onChange}>스토리 수정하기</button>
         </form>
