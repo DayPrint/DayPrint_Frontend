@@ -282,13 +282,14 @@ main .MyAccount {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+    padding: 9px;
 }
 
 .MyWorkplace div a {
     /* background: url(../images/plus-solid.svg) no-repeat; */
     color: #ffeead;
     text-decoration: none;
-
+    /* padding: 10px; */
 }
 
 .MyWorkplace > div:nth-child(1n) {

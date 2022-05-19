@@ -92,26 +92,28 @@ main nav .postpage{
 }
 main nav .postpage li{
     /* border: 1px solid rgb(44, 19, 19); */
-    width: 250px;
+    width: 338px;
     height: 80px;
     text-align: center;
     margin: 5px 0;
+    
 }
 main nav .postpage .postpage_name{
     font-size: 40px;
     line-height: 80px;
 }
+
 .tape1, .tape2, .tape3, .tape4, .tape5 {
     background: url("../style/images/dotted-tape-sprite.png") no-repeat;
-    background-size: 660px;
-    width: 250px;
+    background-size: 880px;
+    width: 300px;
     height: 80px;
 }
 .tape1 {
     background-position: -35px -40px;
 }
 .tape2 {
-    background-position: -35px -250px;
+    background-position: -45px -300px;
 }
 .tape3 {
     background-position: -35px -415px;  
@@ -126,12 +128,14 @@ main nav .postpage .postpage_des{
     background: #fff;
     vertical-align: center;
     text-align: center;
+    
+
     /* overflow-wrap: break-word; */
 }
 main nav .postpage .postpage_des p{
     text-align: center;
     font-size: 35px;
-    line-height: 40px;
+    line-height: 80px;
 }
 
 /*------postpage_coms------*/
@@ -193,6 +197,9 @@ main nav .postpage .postpage_des p{
 }
 .postpage_coms .com_container a .com_text{
     transform: translateY(9px);
+    font-size: 30px;
+    align-items: center;
+    
 }
 
 .swal2-popup {
